@@ -5,7 +5,7 @@ date: "2024-10-07"
 format: html
 ---
 
->**Instructions:** Solve the problems given in the course resourse page. Some of the solutions are wrong. Identify the mistakes in the solution and correct it in your work.
+>**Instructions:** Solve the problems given in the course resource page. Some of the solutions are wrong. Identify the mistakes in the solution and correct it in your work.
 
 # Eigenvalues and Eigenvectors of 2X2 Matrices
 
