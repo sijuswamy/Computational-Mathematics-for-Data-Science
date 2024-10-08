@@ -255,6 +255,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#solution-5-1" id="toc-solution-5-1" class="nav-link" data-scroll-target="#solution-5-1">Solution 5</a></li>
   </ul></li>
+  <li><a href="#diagonalization-of-a-matrix" id="toc-diagonalization-of-a-matrix" class="nav-link" data-scroll-target="#diagonalization-of-a-matrix">Diagonalization of a matrix</a>
+  <ul class="collapse">
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -615,6 +619,44 @@ E = \begin{pmatrix} 3 &amp; 0 &amp; 0 \\ 0 &amp; 3 &amp; 1 \\ 0 &amp; 0 &amp; 3 
 (E - 3I)v = 0 \implies \begin{pmatrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = 0 \implies v_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, v_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, v_3 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
 \]</span></li>
 </ul></li>
+</ol>
+</section>
+</section>
+<section id="diagonalization-of-a-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="diagonalization-of-a-matrix">Diagonalization of a matrix</h2>
+<p>Let <span class="math inline">\(A\)</span> be square matrix, with all eigen values satisfies the relation <span class="math inline">\(A.M=G.M\)</span>, then the diagonal form of <span class="math inline">\(A\)</span> is <span class="math display">\[D=B^{-1}DB\]</span></p>
+<p>where <span class="math inline">\(D\)</span> is the diagonal matrix of eigen values of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> is the modal matrix, which contains eigen values of as columns.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+When <span class="math inline">\(A\)</span> is diagonalizable
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The matrx <span class="math inline">\(A\)</span> is diagonalizable only if Algebraic Multiplicity (A.M) and Geometric Multiplicity (G.M) of each eigen value <span class="math inline">\(\lambda\)</span> of <span class="math inline">\(A\)</span> are same.</p>
+<p><strong>Algebraic Multiplicity:</strong> Number of times the eigen value <span class="math inline">\(\lambda\)</span> repeats in the solution of the characteristic polynomial of <span class="math inline">\(A\)</span>.</p>
+<p><strong>Geometric Multiplicity:</strong> Number of vectors in the eigen space of <span class="math inline">\(\lambda\)</span>.</p>
+</div>
+</div>
+<section id="problems" class="level3">
+<h3 class="anchored" data-anchor-id="problems">Problems</h3>
+<blockquote class="blockquote">
+<p>Diagonalize the following matrices if possible.</p>
+</blockquote>
+<ol type="1">
+<li><p><span class="math inline">\(A=\begin{bmatrix} 3&amp;-2&amp;0\\ -2&amp;3&amp;0\\ 0&amp;0&amp;5\end{bmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(A=\begin{bmatrix}2&amp;1&amp;-1\\ 1&amp;1&amp;-2\\ -1&amp;-2&amp;1\end{bmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(A=\begin{bmatrix}-2&amp; 2&amp;-3\\ 2&amp;1&amp;-6\\ -1&amp;-2&amp;0\end{bmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(A=\begin{bmatrix} 2&amp;1&amp;0\\ 0&amp;1&amp;-1\\ 0&amp;2&amp;4\end{bmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(A=\begin{bmatrix}-3&amp;-7&amp;-5\\ 2&amp;4&amp;3\\ 1&amp;2&amp;2\end{bmatrix}\)</span>.</p></li>
+<li><p>If <span class="math inline">\(2\)</span> is an eigen value of <span class="math inline">\(\begin{bmatrix}3 &amp;-1&amp;1\\ -1&amp;5&amp;-1\\ 1&amp;-1&amp;3\end{bmatrix}\)</span>, without using its characteristic polynomial, find the other eigen values. Also find the eigen values of <span class="math inline">\(A^3,A^T,A^{-1}, 5A, A-3I\)</span> and <span class="math inline">\(\text{adj}(A)\)</span>.</p></li>
+<li><p>Examine whether <span class="math inline">\(A=\begin{bmatrix}7&amp;-1\\4 &amp;3\end{bmatrix}\)</span> is diagonalizable or not.</p></li>
+<li><p>Diagonalize <span class="math inline">\(A=\begin{bmatrix}2&amp;0&amp;1\\ 0&amp;2&amp;0\\ 1&amp;0&amp;2\end{bmatrix}\)</span>.</p></li>
+<li><p>Examine whether the matrix <span class="math inline">\(A=\begin{bmatrix}1&amp;-3&amp;3\\ 0&amp;-5&amp;6\\ 0&amp;-3&amp;4\end{bmatrix}\)</span> is diagonalizable. If yes find the diagonal form.</p></li>
+<li><p>Examine whether <span class="math inline">\(A=\begin{bmatrix}1&amp;2&amp;2\\ 0&amp;2&amp;1\\ -1&amp;2&amp;2\end{bmatrix}\)</span> is diagonalizable or not. If so diagonalize it.</p></li>
 </ol>
 
 

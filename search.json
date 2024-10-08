@@ -194,6 +194,18 @@
     ]
   },
   {
+    "objectID": "2024/weeks/week01/class_work1.html#diagonalization-of-a-matrix",
+    "href": "2024/weeks/week01/class_work1.html#diagonalization-of-a-matrix",
+    "title": "Eigenvalues and Eigenvectors Problems",
+    "section": "Diagonalization of a matrix",
+    "text": "Diagonalization of a matrix\nLet \\(A\\) be square matrix, with all eigen values satisfies the relation \\(A.M=G.M\\), then the diagonal form of \\(A\\) is \\[D=B^{-1}DB\\]\nwhere \\(D\\) is the diagonal matrix of eigen values of \\(A\\), \\(B\\) is the modal matrix, which contains eigen values of as columns.\n\n\n\n\n\n\nWhen \\(A\\) is diagonalizable\n\n\n\nThe matrx \\(A\\) is diagonalizable only if Algebraic Multiplicity (A.M) and Geometric Multiplicity (G.M) of each eigen value \\(\\lambda\\) of \\(A\\) are same.\nAlgebraic Multiplicity: Number of times the eigen value \\(\\lambda\\) repeats in the solution of the characteristic polynomial of \\(A\\).\nGeometric Multiplicity: Number of vectors in the eigen space of \\(\\lambda\\).\n\n\n\nProblems\n\nDiagonalize the following matrices if possible.\n\n\n\\(A=\\begin{bmatrix} 3&-2&0\\\\ -2&3&0\\\\ 0&0&5\\end{bmatrix}\\).\n\\(A=\\begin{bmatrix}2&1&-1\\\\ 1&1&-2\\\\ -1&-2&1\\end{bmatrix}\\).\n\\(A=\\begin{bmatrix}-2& 2&-3\\\\ 2&1&-6\\\\ -1&-2&0\\end{bmatrix}\\).\n\\(A=\\begin{bmatrix} 2&1&0\\\\ 0&1&-1\\\\ 0&2&4\\end{bmatrix}\\).\n\\(A=\\begin{bmatrix}-3&-7&-5\\\\ 2&4&3\\\\ 1&2&2\\end{bmatrix}\\).\nIf \\(2\\) is an eigen value of \\(\\begin{bmatrix}3 &-1&1\\\\ -1&5&-1\\\\ 1&-1&3\\end{bmatrix}\\), without using its characteristic polynomial, find the other eigen values. Also find the eigen values of \\(A^3,A^T,A^{-1}, 5A, A-3I\\) and \\(\\text{adj}(A)\\).\nExamine whether \\(A=\\begin{bmatrix}7&-1\\\\4 &3\\end{bmatrix}\\) is diagonalizable or not.\nDiagonalize \\(A=\\begin{bmatrix}2&0&1\\\\ 0&2&0\\\\ 1&0&2\\end{bmatrix}\\).\nExamine whether the matrix \\(A=\\begin{bmatrix}1&-3&3\\\\ 0&-5&6\\\\ 0&-3&4\\end{bmatrix}\\) is diagonalizable. If yes find the diagonal form.\nExamine whether \\(A=\\begin{bmatrix}1&2&2\\\\ 0&2&1\\\\ -1&2&2\\end{bmatrix}\\) is diagonalizable or not. If so diagonalize it.",
+    "crumbs": [
+      "🗓️ Weeks",
+      "Week 01",
+      "👨‍🏫 Class Work Resource"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Computational Mathematics for Data Science",
@@ -212,7 +224,7 @@
     "href": "2024/index.html",
     "title": "Computational Mathematics for Data Science",
     "section": "",
-    "text": "📢 Important\n\n\n\n\n\n(12/03/2023)\n\n🗓️ Class Work-1 is now available!\n\n\n\n\n\n🧑🏻‍🏫 Our Team\n\nCourse ConvenorTeaching Staff\n\n\n\nDr. Soman K P  Professor and Dean  Amrita School of Artificial Intelligence 📧 kp_soman@amrita.edu ( at )\nOffice Hours:\n\nWhen: 09:00AM-16:30PM\nWhere: ASAI\nHow to book:\n\n\n\n\nMr. Siju K S  Research Scholar at CEN  📧 EMAIL ( at )\n\nDr. Vipin V  Assistant Professor, CEN  📧 EMAIL ( at )\n\n\n\n\n\n📍 Lecture\nFridays 2pm-4pm at PLACE\n\n\n💻 Class Groups\n\nGroup 01\n\n📆 Mondays\n⌚ 09:00 - 10:30\n📍\n🧑‍🏫 TA_NAME\n\n\n\nGroup 02\n\n📆 Mondays\n⌚ 10:30 - 12:00\n📍\n🧑‍🏫 TA_NAME\n\n\n\nGroup 03\n\n📆 Fridays\n⌚ 16:00 - 17:30\n📍\n🧑‍🏫 TA_NAME",
+    "text": "📢 Important\n\n\n\n\n\n(09/10/2024)\n\n🗓️ Class Work-1 is now available!\n\n\n\n\n\n🧑🏻‍🏫 Our Team\n\nCourse ConvenorTeaching Staff\n\n\n\nDr. Soman K P  Professor and Dean  Amrita School of Artificial Intelligence 📧 kp_soman@amrita.edu ( at )\nOffice Hours:\n\nWhen: 09:00AM-16:30PM\nWhere: ASAI\nHow to book:\n\n\n\n\nMr. Siju K S  Research Scholar at CEN  📧 EMAIL ( at )\n\nDr. Vipin V  Assistant Professor, CEN  📧 EMAIL ( at )\n\n\n\n\n\n📍 Lecture\nFridays 2pm-4pm at PLACE\n\n\n💻 Class Groups\n\nGroup 01\n\n📆 Mondays\n⌚ 09:00 - 10:30\n📍\n🧑‍🏫 TA_NAME\n\n\n\nGroup 02\n\n📆 Mondays\n⌚ 10:30 - 12:00\n📍\n🧑‍🏫 TA_NAME\n\n\n\nGroup 03\n\n📆 Fridays\n⌚ 16:00 - 17:30\n📍\n🧑‍🏫 TA_NAME",
     "crumbs": [
       "🏠 Home"
     ]
