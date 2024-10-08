@@ -7,7 +7,7 @@ format: html
 ::: {.callout-important collapse=false}
 ## 📢 Important
 
-(12/03/2023)
+(09/10/2024)
 
 - [🗓️ Class Work-1](/2024/weeks/week01/class_work1.qmd) is now available!
 

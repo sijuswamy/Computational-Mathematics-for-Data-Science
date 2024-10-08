@@ -330,3 +330,46 @@ $$
      $$
      (E - 3I)v = 0 \implies \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = 0 \implies v_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, v_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, v_3 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
      $$
+
+## Diagonalization of a matrix
+
+Let $A$ be square matrix, with all eigen values satisfies the relation $A.M=G.M$, then the diagonal form of $A$ is
+$$D=B^{-1}DB$$
+
+where $D$ is the diagonal matrix of eigen values of $A$, $B$ is the modal matrix, which contains eigen values of as columns.
+
+:::{.callout-caution}
+
+## When $A$ is diagonalizable
+
+The matrx $A$ is diagonalizable only if Algebraic Multiplicity (A.M)  and Geometric Multiplicity (G.M) of each eigen value $\lambda$ of $A$ are same.
+
+**Algebraic Multiplicity:** Number of times the eigen value $\lambda$ repeats in the solution of the characteristic polynomial of $A$.
+
+**Geometric Multiplicity:** Number of vectors in the eigen space of $\lambda$.
+
+:::
+
+### Problems
+
+> Diagonalize the following matrices if possible.
+
+1. $A=\begin{bmatrix} 3&-2&0\\ -2&3&0\\ 0&0&5\end{bmatrix}$.
+
+2. $A=\begin{bmatrix}2&1&-1\\ 1&1&-2\\ -1&-2&1\end{bmatrix}$.
+
+3. $A=\begin{bmatrix}-2& 2&-3\\ 2&1&-6\\ -1&-2&0\end{bmatrix}$.
+
+4. $A=\begin{bmatrix} 2&1&0\\ 0&1&-1\\ 0&2&4\end{bmatrix}$.
+
+5. $A=\begin{bmatrix}-3&-7&-5\\ 2&4&3\\ 1&2&2\end{bmatrix}$.
+
+6. If $2$ is an eigen value of $\begin{bmatrix}3 &-1&1\\ -1&5&-1\\ 1&-1&3\end{bmatrix}$, without using its characteristic polynomial, find the other eigen values. Also find the eigen values of $A^3,A^T,A^{-1}, 5A, A-3I$ and $\text{adj}(A)$.
+
+7. Examine whether $A=\begin{bmatrix}7&-1\\4 &3\end{bmatrix}$ is diagonalizable or not.
+
+8. Diagonalize $A=\begin{bmatrix}2&0&1\\ 0&2&0\\ 1&0&2\end{bmatrix}$.
+
+9. Examine whether the matrix $A=\begin{bmatrix}1&-3&3\\ 0&-5&6\\ 0&-3&4\end{bmatrix}$ is diagonalizable. If yes find the diagonal form.
+
+10. Examine whether $A=\begin{bmatrix}1&2&2\\ 0&2&1\\ -1&2&2\end{bmatrix}$ is diagonalizable or not. If so diagonalize it.
