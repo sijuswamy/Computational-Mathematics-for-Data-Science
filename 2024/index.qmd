@@ -8,6 +8,7 @@ format: html
 ## 📢 Important
 
 (09/10/2024)
+- [🗓️ Unifying Geometry with Algebra:](/2024/weeks/week01/algebra_geometry.qmd) is now available!
 
 - [🗓️ Class Work-1](/2024/weeks/week01/class_work1.qmd) is now available!
 

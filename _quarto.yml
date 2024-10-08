@@ -42,7 +42,8 @@ website:
          - href: 2024/weeks/week01/page.qmd
            text: Week 01
            contents:
-            
+             - href: 2024/weeks/week01/algebra_geometry.qmd
+               text: 👨‍🏫 Week-1 Summary          
              - href: 2024/weeks/week01/class_work1.qmd
                text: 👨‍🏫 Class Work Resource
             #  - href: 2024/weeks/week01/lab.qmd
