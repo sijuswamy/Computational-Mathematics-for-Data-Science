@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Soman K P">
-<meta name="dcterms.date" content="2024-10-09">
 
-<title>Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science</title>
+<title>Linear Transformations: The Essence of Linearity – Computational Mathematics for Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../2024/weeks/week01/Vectors_matrices.html" rel="next">
-<link href="../../../2024/weeks/week01/page.html" rel="prev">
+<link href="../../../2024/weeks/week02/page2.html" rel="next">
+<link href="../../../2024/weeks/week01/vector-space.html" rel="prev">
 <link href="../../../figures/logos/logo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -103,9 +102,11 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../../css/custom_style.css">
 <link rel="stylesheet" href="../../../css/syllabus.css">
-<meta property="og:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta property="og:title" content="Linear Transformations: The Essence of Linearity – Computational Mathematics for Data Science">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Computational Mathematics for Data Science">
-<meta name="twitter:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta name="twitter:title" content="Linear Transformations: The Essence of Linearity – Computational Mathematics for Data Science">
+<meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@<twitter-handle>">
 <meta name="twitter:site" content="\@<twitter-handle>">
 <meta name="twitter:card" content="summary">
@@ -137,7 +138,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/linear_transformations.html">👨‍🏫 Linear Transformations- The Essence of Linearity</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -175,7 +176,7 @@ window.Quarto = {
       <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">👨‍🏫 Week-1 Summary</span></a>
   </div>
 </li>
@@ -205,7 +206,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week01/linear_transformations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2024/weeks/week01/linear_transformations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">👨‍🏫 Linear Transformations- The Essence of Linearity</span></a>
   </div>
 </li>
@@ -272,30 +273,22 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#generalization-power-of-linear-algebra" id="toc-generalization-power-of-linear-algebra" class="nav-link active" data-scroll-target="#generalization-power-of-linear-algebra">Generalization Power of Linear Algebra</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#coordinate-geometry-lines-planes-and-directional-cosines" id="toc-coordinate-geometry-lines-planes-and-directional-cosines" class="nav-link" data-scroll-target="#coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</a>
-  <ul class="collapse">
-  <li><a href="#planes-in-three-dimensional-space" id="toc-planes-in-three-dimensional-space" class="nav-link" data-scroll-target="#planes-in-three-dimensional-space">Planes in Three-Dimensional Space</a></li>
-  </ul></li>
-  <li><a href="#linear-algebra-vectors-subspaces-and-basis" id="toc-linear-algebra-vectors-subspaces-and-basis" class="nav-link" data-scroll-target="#linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</a>
-  <ul class="collapse">
-  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a></li>
-  <li><a href="#direction-cosines-and-simultaneous-equations" id="toc-direction-cosines-and-simultaneous-equations" class="nav-link" data-scroll-target="#direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</a></li>
-  </ul></li>
-  <li><a href="#a-unified-view-of-coordinate-geometry-and-linear-algebra" id="toc-a-unified-view-of-coordinate-geometry-and-linear-algebra" class="nav-link" data-scroll-target="#a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
-  </ul></li>
+  <li><a href="#definition-mapping-vectors-while-preserving-linearity" id="toc-definition-mapping-vectors-while-preserving-linearity" class="nav-link active" data-scroll-target="#definition-mapping-vectors-while-preserving-linearity">Definition: Mapping Vectors While Preserving Linearity</a></li>
+  <li><a href="#matrices-as-representations-a-basis-dependent-encoding" id="toc-matrices-as-representations-a-basis-dependent-encoding" class="nav-link" data-scroll-target="#matrices-as-representations-a-basis-dependent-encoding">Matrices as Representations: A Basis-Dependent Encoding</a></li>
+  <li><a href="#example-rotation-in-the-plane" id="toc-example-rotation-in-the-plane" class="nav-link" data-scroll-target="#example-rotation-in-the-plane">Example: Rotation in the Plane</a></li>
+  <li><a href="#basis-changes-transforming-the-matrix-representation" id="toc-basis-changes-transforming-the-matrix-representation" class="nav-link" data-scroll-target="#basis-changes-transforming-the-matrix-representation">Basis Changes: Transforming the Matrix Representation</a></li>
+  <li><a href="#example-scaling-and-shearing-transformation" id="toc-example-scaling-and-shearing-transformation" class="nav-link" data-scroll-target="#example-scaling-and-shearing-transformation">Example: Scaling and Shearing Transformation</a></li>
+  <li><a href="#significance-unifying-framework-for-linearity" id="toc-significance-unifying-framework-for-linearity" class="nav-link" data-scroll-target="#significance-unifying-framework-for-linearity">Significance: Unifying Framework for Linearity</a></li>
+  <li><a href="#applications-of-linear-transformations" id="toc-applications-of-linear-transformations" class="nav-link" data-scroll-target="#applications-of-linear-transformations">Applications of Linear Transformations</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/linear_transformations.html">👨‍🏫 Linear Transformations- The Essence of Linearity</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Unifying Coordinate Geometry with Linear Algebra</h1>
+<h1 class="title">Linear Transformations: The Essence of Linearity</h1>
 </div>
 
 
@@ -305,16 +298,10 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Siju Swamy </p>
+             <p>Dr.&nbsp;<a href="#">Soman K P</a> </p>
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">09 October 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -324,139 +311,116 @@ window.Quarto = {
 </header>
 
 
-<section id="generalization-power-of-linear-algebra" class="level1">
-<h1>Generalization Power of Linear Algebra</h1>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this discussion, we will bridge the gap between coordinate geometry and linear algebra by exploring how geometric objects such as lines and planes can be represented algebraically. This journey begins with familiar notions from high school geometry, such as lines and planes in 3D, and leads us into the powerful abstractions provided by linear algebra, such as vector spaces, subspaces, and matrices.</p>
-<p>We aim to answer the question: <em>Which is better for representing subspaces—basis sets or linear equations?</em> We will use examples from both geometry and algebra to build a unified understanding.</p>
-</section>
-<section id="coordinate-geometry-lines-planes-and-directional-cosines" class="level2">
-<h2 class="anchored" data-anchor-id="coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</h2>
-<p>In three-dimensional space, a line can be represented parametrically using a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> and a direction vector <span class="math inline">\(\mathbf{d} = (a, b, c)\)</span>. The parametric equations for the line can be written as:</p>
+<p>Linear transformations lie at the heart of linear algebra. They map vectors between vector spaces while preserving the structure of vector addition and scalar multiplication. In this section, the concept of <strong>linear transformations</strong> is introduced as a way to extend our understanding of matrix operations into more abstract and general contexts.</p>
+<section id="definition-mapping-vectors-while-preserving-linearity" class="level3">
+<h3 class="anchored" data-anchor-id="definition-mapping-vectors-while-preserving-linearity">Definition: Mapping Vectors While Preserving Linearity</h3>
+<p>A <strong>linear transformation</strong>, denoted by <span class="math inline">\(T\)</span>, is a mapping between two vector spaces, <span class="math inline">\(V\)</span> (input space) and <span class="math inline">\(Y\)</span> (output space), that adheres to the principle of linearity:</p>
 <p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + at, \\
-y &amp;= y_0 + bt, \\
-z &amp;= z_0 + ct,
-\end{aligned}
+T(c\mathbf{v} + d\mathbf{w}) = cT(\mathbf{v}) + dT(\mathbf{w})
 \]</span></p>
-<p>where <span class="math inline">\(t\)</span> is a parameter.</p>
-<p>Alternatively, we can express a line using directional cosines, which are the cosines of the angles that the line makes with the coordinate axes. If the direction cosines are denoted as <span class="math inline">\(l, m, n\)</span>, where:</p>
-<p><span class="math display">\[
-l = \cos(\alpha), \quad m = \cos(\beta), \quad n = \cos(\gamma),
-\]</span></p>
-<p>the equations can be expressed as:</p>
-<p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + k \cdot l, \\
-y &amp;= y_0 + k \cdot m, \\
-z &amp;= z_0 + k \cdot n,
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(k\)</span> is a scalar. This leads to the relationship:</p>
-<p><span class="math display">\[
-\frac{x - x_0}{l} = \frac{y - y_0}{m} = \frac{z - z_0}{n},
-\]</span></p>
-<p>which can be simplified into a set of two independent simultaneous linear equations, demonstrating a deeper connection between the geometric representation and linear algebraic formulation.</p>
-<section id="planes-in-three-dimensional-space" class="level3">
-<h3 class="anchored" data-anchor-id="planes-in-three-dimensional-space">Planes in Three-Dimensional Space</h3>
-<p>The equation of a plane can be defined in multiple ways, but one common representation is through the normal vector and a point on the plane. If we have a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> on the plane and a normal vector <span class="math inline">\(\mathbf{n} = (a, b, c)\)</span>, the equation of the plane can be expressed as:</p>
-<p><span class="math display">\[
-a(x - x_0) + b(y - y_0) + c(z - z_0) = 0.
-\]</span></p>
-<p>Interestingly, if we are given three non-collinear points <span class="math inline">\(P_1(x_1, y_1, z_1)\)</span>, <span class="math inline">\(P_2(x_2, y_2, z_2)\)</span>, and <span class="math inline">\(P_3(x_3, y_3, z_3)\)</span>, we can also find the equation of the plane. The vectors <span class="math inline">\(\mathbf{v_1} = P_2 - P_1\)</span> and <span class="math inline">\(\mathbf{v_2} = P_3 - P_1\)</span> are formed, and their cross product <span class="math inline">\(\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2}\)</span> gives us the normal vector to the plane. Using the normal vector and one of the points, we can derive the plane equation.</p>
+<p>This equation encapsulates the essence of linearity:</p>
+<ul>
+<li><strong>Additivity</strong>: Transforming the sum of two vectors is equivalent to transforming each vector individually and then adding the transformed results.</li>
+<li><strong>Homogeneity</strong>: Scaling a vector by a constant and then transforming it is the same as transforming the vector first and then scaling the result.</li>
+</ul>
+<p>Examples of linear transformations include <strong>rotations in the x-y plane</strong>, and the <strong>derivative operation</strong> in function spaces.</p>
 </section>
-</section>
-<section id="linear-algebra-vectors-subspaces-and-basis" class="level2">
-<h2 class="anchored" data-anchor-id="linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</h2>
-<p>In linear algebra, we discuss concepts such as vector spaces, linear combinations, subspaces, and bases. A vector space is a collection of vectors that can be added together and multiplied by scalars. A subspace is a subset of a vector space that is itself a vector space under the same operations.</p>
-<p>A basis of a vector space is a set of vectors that are linearly independent and span the space. For example, in <span class="math inline">\(\mathbb{R}^3\)</span>, the standard basis consists of the vectors <span class="math inline">\(\mathbf{e_1} = (1,0,0)\)</span>, <span class="math inline">\(\mathbf{e_2} = (0,1,0)\)</span>, and <span class="math inline">\(\mathbf{e_3} = (0,0,1)\)</span>.</p>
-<p>The relationship between linear equations and subspaces becomes evident when considering the null space of a matrix. The null space consists of all vectors <span class="math inline">\(\mathbf{x}\)</span> such that <span class="math inline">\(A\mathbf{x} = 0\)</span>, representing a subspace of the vector space defined by <span class="math inline">\(A\)</span>.</p>
-<section id="eigenvalues-and-eigenvectors" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</h3>
-<p>Eigenvalues and eigenvectors play a significant role in linear algebra. Given a square matrix <span class="math inline">\(A\)</span>, an eigenvalue <span class="math inline">\(\lambda\)</span> is defined by the equation:</p>
-<p><span class="math display">\[
-(A - \lambda I)\mathbf{x} = 0,
-\]</span></p>
-<p>where <span class="math inline">\(I\)</span> is the identity matrix and <span class="math inline">\(\mathbf{x}\)</span> is the corresponding eigenvector.</p>
-<p>A major observation in this context is that solving <span class="math inline">\((A - \lambda I)\mathbf{x} = 0\)</span> results in finding a vector <span class="math inline">\(\mathbf{x}\)</span> that is orthogonal to the transformation defined by <span class="math inline">\(A - \lambda I\)</span>. Furthermore, since <span class="math inline">\(A - \lambda I\)</span> contains only two independent rows, the eigenvector <span class="math inline">\(\mathbf{x}\)</span> can be interpreted geometrically as the cross product of the independent vectors of <span class="math inline">\(A - \lambda I\)</span> in 3D space.</p>
-</section>
-<section id="direction-cosines-and-simultaneous-equations" class="level3">
-<h3 class="anchored" data-anchor-id="direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</h3>
-<p>Using the concept of directional cosines, we can represent a line in 3D. By simplifying this representation, we can observe that it reduces to a system of two independent simultaneous linear equations. This further emphasizes the connection between geometric concepts and algebraic formulations.</p>
-</section>
-</section>
-<section id="a-unified-view-of-coordinate-geometry-and-linear-algebra" class="level2">
-<h2 class="anchored" data-anchor-id="a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</h2>
-<p>By synthesizing concepts from coordinate geometry and linear algebra, we find a rich interplay between algebraic equations and geometric interpretations. We observe how algebraic manipulations of vectors, represented in matrices, connect with geometric representations in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
-<p>This unification reveals deeper mathematical structures, particularly the concept of matrices as versatile tools for data representation, operations, and abstract computations. Matrices allow us to encapsulate geometric transformations, linear relationships, and eigenvalue problems in a single mathematical framework. Their compatibility with computation and analysis enhances our ability to model, analyze, and solve real-world problems in multi-dimensional spaces.</p>
-<p>The abstract nature of matrices helps bridge various mathematical concepts, leading to innovative applications across disciplines.</p>
-</section>
-<section id="tasks" class="level2">
-<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<section id="matrices-as-representations-a-basis-dependent-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="matrices-as-representations-a-basis-dependent-encoding">Matrices as Representations: A Basis-Dependent Encoding</h3>
+<p>Linear transformations can be represented by matrices, though this representation depends on the choice of bases for the vector spaces involved. Here’s how to construct the matrix <span class="math inline">\(A\)</span> that represents a linear transformation <span class="math inline">\(T\)</span>:</p>
 <ol type="1">
-<li><strong>Find the equation of the plane passing through three points: <span class="math inline">\((1, 2, 0)\)</span>, <span class="math inline">\((3, 4, 5)\)</span>, <span class="math inline">\((6, 7, 8)\)</span>.</strong></li>
+<li><strong>Choose bases</strong>: Select a basis <span class="math inline">\(\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}\)</span> for the input space <span class="math inline">\(V\)</span>, and a basis <span class="math inline">\(\{\mathbf{y}_1, \mathbf{y}_2, \dots, \mathbf{y}_m\}\)</span> for the output space <span class="math inline">\(Y\)</span>.</li>
+<li><strong>Transform basis vectors</strong>: Apply the transformation <span class="math inline">\(T\)</span> to each input basis vector <span class="math inline">\(\mathbf{v}_j\)</span>.</li>
+<li><strong>Express transformed vectors in the output basis</strong>: Write each transformed vector <span class="math inline">\(T(\mathbf{v}_j)\)</span> as a linear combination of the output basis vectors:</li>
 </ol>
-<p><strong>Solution:</strong><br>
-To find the equation of the plane passing through the points <span class="math inline">\(P_1(1, 2, 0)\)</span>, <span class="math inline">\(P_2(3, 4, 5)\)</span>, and <span class="math inline">\(P_3(6, 7, 8)\)</span>, we start by forming two vectors from these points:</p>
 <p><span class="math display">\[
-\mathbf{v_1} = P_2 - P_1 = (3 - 1, 4 - 2, 5 - 0) = (2, 2, 5)
+T(\mathbf{v}_j) = a_{1j} \mathbf{y}_1 + a_{2j} \mathbf{y}_2 + \dots + a_{mj} \mathbf{y}_m
 \]</span></p>
-<p><span class="math display">\[
-\mathbf{v_2} = P_3 - P_1 = (6 - 1, 7 - 2, 8 - 0) = (5, 5, 8)
-\]</span></p>
-<p>Next, we find the normal vector <span class="math inline">\(\mathbf{n}\)</span> to the plane by taking the cross product of <span class="math inline">\(\mathbf{v_1}\)</span> and <span class="math inline">\(\mathbf{v_2}\)</span>:</p>
-<p><span class="math display">\[
-\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2} =
-\begin{vmatrix}
-\hat{i} &amp; \hat{j} &amp; \hat{k} \\
-2 &amp; 2 &amp; 5 \\
-5 &amp; 5 &amp; 8
-\end{vmatrix}
-\]</span></p>
-<p>Calculating the determinant, we have:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(2 \cdot 8 - 5 \cdot 5) - \hat{j}(2 \cdot 8 - 5 \cdot 5) + \hat{k}(2 \cdot 5 - 2 \cdot 5)
-\]</span></p>
-<p>This simplifies to:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(-9) + \hat{j}(9) + \hat{k}(0) = (-9, 9, 0)
-\]</span></p>
-<p>The equation of the plane can be expressed as:</p>
-<p><span class="math display">\[
-ax + by + cz = d
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{n} = (a, b, c) = (-9, 9, 0)\)</span>. Using the point <span class="math inline">\(P_1(1, 2, 0)\)</span> to find <span class="math inline">\(d\)</span>:</p>
-<p><span class="math display">\[
--9(1) + 9(2) + 0(0) = d
-\]</span></p>
-<p>This gives:</p>
-<p><span class="math display">\[
--9 + 18 = d \implies d = 9
-\]</span></p>
-<p>Thus, the equation of the plane is:</p>
-<p><span class="math display">\[
--9x + 9y = 9 \quad \text{or} \quad x - y = -1.
-\]</span></p>
-<ol start="2" type="1">
-<li><strong>Find the directional cosines of the line passing through points <span class="math inline">\((1, 1, 1)\)</span> and <span class="math inline">\((4, 5, 6)\)</span>.</strong></li>
+<ol start="4" type="1">
+<li><strong>Form the matrix</strong>: The coefficients <span class="math inline">\(a_{ij}\)</span> form the entries of the matrix <span class="math inline">\(A\)</span>, where the <span class="math inline">\(j\)</span>-th column of <span class="math inline">\(A\)</span> corresponds to the transformation of the <span class="math inline">\(j\)</span>-th input basis vector.</li>
 </ol>
-<p><strong>Solution:</strong></p>
-<p>The direction vector of the line is:</p>
+<p>This matrix <span class="math inline">\(A\)</span> encodes the action of the linear transformation <span class="math inline">\(T\)</span> on any vector expressed in the chosen input basis. When <span class="math inline">\(A\)</span> is applied to a coordinate vector, it returns the transformed vector in terms of the output basis.</p>
+</section>
+<section id="example-rotation-in-the-plane" class="level3">
+<h3 class="anchored" data-anchor-id="example-rotation-in-the-plane">Example: Rotation in the Plane</h3>
+<p>Consider a rotation by an angle <span class="math inline">\(\theta\)</span> in the plane. The corresponding transformation matrix <span class="math inline">\(A_\theta\)</span> is given by:</p>
 <p><span class="math display">\[
-\mathbf{d} = (4 - 1, 5 - 1, 6 - 1) = (3, 4, 5).
+A_\theta =
+\begin{pmatrix}
+\cos\theta &amp; -\sin\theta \\
+\sin\theta &amp; \cos\theta
+\end{pmatrix}
 \]</span></p>
-<p>The magnitude of the direction vector is:</p>
+<p>This matrix represents the linear transformation that rotates a vector in <span class="math inline">\(\mathbb{R}^2\)</span> by an angle <span class="math inline">\(\theta\)</span>.</p>
+</section>
+<section id="basis-changes-transforming-the-matrix-representation" class="level3">
+<h3 class="anchored" data-anchor-id="basis-changes-transforming-the-matrix-representation">Basis Changes: Transforming the Matrix Representation</h3>
+<p>The matrix representation of a linear transformation depends on the choice of bases for both the input and output spaces. Changing these bases alters the matrix representation. Let <span class="math inline">\(M\)</span> represent <span class="math inline">\(T\)</span> with respect to new bases <span class="math inline">\(\{V_1, V_2, \dots, V_n\}\)</span> in <span class="math inline">\(V\)</span> and <span class="math inline">\(\{Y_1, Y_2, \dots, Y_m\}\)</span> in <span class="math inline">\(Y\)</span>. The new matrix <span class="math inline">\(M\)</span> is related to the old matrix <span class="math inline">\(A\)</span> by:</p>
 <p><span class="math display">\[
-|\mathbf{d}| = \sqrt{3^2 + 4^2 + 5^2} = \sqrt{9 + 16 + 25} = \sqrt{50}.
+M = Y^{-1} A V
 \]</span></p>
-<p>The directional cosines are:</p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(V\)</span> is the change-of-basis matrix for the input space, and</li>
+<li><span class="math inline">\(Y\)</span> is the change-of-basis matrix for the output space.</li>
+</ul>
+</section>
+<section id="example-scaling-and-shearing-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="example-scaling-and-shearing-transformation">Example: Scaling and Shearing Transformation</h3>
+<p>Consider a linear transformation <span class="math inline">\(T\)</span> that scales a vector by a factor of 2 in the <span class="math inline">\(x\)</span>-direction and shears it in the <span class="math inline">\(y\)</span>-direction. The corresponding matrix in standard basis is:</p>
 <p><span class="math display">\[
-l = \frac{3}{\sqrt{50}}, \quad m = \frac{4}{\sqrt{50}}, \quad n = \frac{5}{\sqrt{50}}.
+A =
+\begin{pmatrix}
+2 &amp; 1 \\
+0 &amp; 1
+\end{pmatrix}
 \]</span></p>
-<p>Thus, the directional cosines are <span class="math inline">\(l = \frac{3}{\sqrt{50}}\)</span>, <span class="math inline">\(m = \frac{4}{\sqrt{50}}\)</span>, and <span class="math inline">\(n = \frac{5}{\sqrt{50}}\)</span>.</p>
-<hr>
+<p>If we change the basis of the input space using a matrix <span class="math inline">\(V\)</span> and of the output space using a matrix <span class="math inline">\(Y\)</span>, the transformation matrix changes accordingly.</p>
+</section>
+<section id="significance-unifying-framework-for-linearity" class="level3">
+<h3 class="anchored" data-anchor-id="significance-unifying-framework-for-linearity">Significance: Unifying Framework for Linearity</h3>
+<p>Linear transformations provide a unified framework for understanding key concepts in linear algebra. The matrix representation of a linear transformation allows us to interpret matrix operations in terms of transformations:</p>
+<ul>
+<li><strong>Matrix multiplication as composition of transformations</strong>: Multiplying two matrices corresponds to composing the linear transformations they represent.</li>
+<li><strong>Invertible matrices as invertible transformations</strong>: A matrix is invertible if and only if the corresponding linear transformation is invertible.</li>
+<li><strong>Eigenvectors as invariant directions</strong>: Eigenvectors of a matrix represent directions in the input space that remain unchanged (up to scaling) under the corresponding linear transformation.</li>
+</ul>
+</section>
+<section id="applications-of-linear-transformations" class="level3">
+<h3 class="anchored" data-anchor-id="applications-of-linear-transformations">Applications of Linear Transformations</h3>
+<section id="computer-graphics-and-animations" class="level4">
+<h4 class="anchored" data-anchor-id="computer-graphics-and-animations">1. Computer Graphics and Animations</h4>
+<p>Linear transformations are fundamental in computer graphics, where they are used to rotate, scale, and translate objects in 2D and 3D spaces. The transformation of an object is often represented by multiplying the vector of points defining the object by a transformation matrix.</p>
+</section>
+<section id="differential-equations" class="level4">
+<h4 class="anchored" data-anchor-id="differential-equations">2. Differential Equations</h4>
+<p>In solving systems of linear differential equations, linear transformations are used to diagonalize the system’s matrix and simplify the solution process. This allows for easier integration of the system by working with independent variables.</p>
+</section>
+<section id="data-analysis-and-machine-learning" class="level4">
+<h4 class="anchored" data-anchor-id="data-analysis-and-machine-learning">3. Data Analysis and Machine Learning</h4>
+<p>In machine learning, linear transformations form the basis for techniques like <strong>Principal Component Analysis (PCA)</strong>, which transforms data into a new basis defined by its principal components. This reduces dimensionality while preserving the most significant features of the data.</p>
+</section>
+<section id="control-systems" class="level4">
+<h4 class="anchored" data-anchor-id="control-systems">4. Control Systems</h4>
+<p>In control theory, linear transformations are used to model and analyze dynamic systems. They simplify complex systems by transforming them into more manageable representations, which can be used to predict and control system behavior.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concepts:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Linear Transformation</strong>: A mapping between two vector spaces that preserves vector addition and scalar multiplication.</li>
+<li><strong>Matrix Representation</strong>: Every linear transformation can be represented by a matrix, but this depends on the choice of input and output bases.</li>
+<li><strong>Change of Basis</strong>: Changing the basis of either the input or output space transforms the matrix representation of the linear transformation.</li>
+<li><strong>Applications</strong>: Linear transformations are used in graphics, differential equations, machine learning, and control systems.</li>
+</ul>
+</div>
+</div>
 
 
 </section>
@@ -892,13 +856,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../2024/weeks/week01/page.html" class="pagination-link" aria-label="Week 01">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01</span>
+      <a href="../../../2024/weeks/week01/vector-space.html" class="pagination-link" aria-label="👨‍🏫 Essentials of Vector Spaces">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">👨‍🏫 Essentials of Vector Spaces</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../2024/weeks/week01/Vectors_matrices.html" class="pagination-link" aria-label="👨‍🏫 Basics of Linear Algebra">
-        <span class="nav-page-text">👨‍🏫 Basics of Linear Algebra</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../2024/weeks/week02/page2.html" class="pagination-link" aria-label="Week 02">
+        <span class="nav-page-text">Week 02</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

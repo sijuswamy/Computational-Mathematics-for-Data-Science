@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Soman K P">
-<meta name="dcterms.date" content="2024-10-09">
 
-<title>Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science</title>
+<title>Orthogonality: A Powerful Tool in Linear Algebra – Computational Mathematics for Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../2024/weeks/week01/Vectors_matrices.html" rel="next">
-<link href="../../../2024/weeks/week01/page.html" rel="prev">
+<link href="../../../2024/weeks/week02/eigen_value_vector.html" rel="next">
+<link href="../../../2024/weeks/week02/page2.html" rel="prev">
 <link href="../../../figures/logos/logo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -103,9 +102,11 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../../css/custom_style.css">
 <link rel="stylesheet" href="../../../css/syllabus.css">
-<meta property="og:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta property="og:title" content="Orthogonality: A Powerful Tool in Linear Algebra – Computational Mathematics for Data Science">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Computational Mathematics for Data Science">
-<meta name="twitter:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta name="twitter:title" content="Orthogonality: A Powerful Tool in Linear Algebra – Computational Mathematics for Data Science">
+<meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@<twitter-handle>">
 <meta name="twitter:site" content="\@<twitter-handle>">
 <meta name="twitter:card" content="summary">
@@ -137,7 +138,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/page2.html">Week 02</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/orthogonality.html">👨‍🏫 Orthogonality in Vector Space Applications</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -168,14 +169,14 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../2024/weeks/week01/page.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 01</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">👨‍🏫 Week-1 Summary</span></a>
   </div>
 </li>
@@ -215,14 +216,14 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../2024/weeks/week02/page2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 02</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week02/orthogonality.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2024/weeks/week02/orthogonality.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">👨‍🏫 Orthogonality in Vector Space Applications</span></a>
   </div>
 </li>
@@ -272,30 +273,21 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#generalization-power-of-linear-algebra" id="toc-generalization-power-of-linear-algebra" class="nav-link active" data-scroll-target="#generalization-power-of-linear-algebra">Generalization Power of Linear Algebra</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#coordinate-geometry-lines-planes-and-directional-cosines" id="toc-coordinate-geometry-lines-planes-and-directional-cosines" class="nav-link" data-scroll-target="#coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</a>
-  <ul class="collapse">
-  <li><a href="#planes-in-three-dimensional-space" id="toc-planes-in-three-dimensional-space" class="nav-link" data-scroll-target="#planes-in-three-dimensional-space">Planes in Three-Dimensional Space</a></li>
-  </ul></li>
-  <li><a href="#linear-algebra-vectors-subspaces-and-basis" id="toc-linear-algebra-vectors-subspaces-and-basis" class="nav-link" data-scroll-target="#linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</a>
-  <ul class="collapse">
-  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a></li>
-  <li><a href="#direction-cosines-and-simultaneous-equations" id="toc-direction-cosines-and-simultaneous-equations" class="nav-link" data-scroll-target="#direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</a></li>
-  </ul></li>
-  <li><a href="#a-unified-view-of-coordinate-geometry-and-linear-algebra" id="toc-a-unified-view-of-coordinate-geometry-and-linear-algebra" class="nav-link" data-scroll-target="#a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
-  </ul></li>
+  <li><a href="#orthogonality-of-vectors-and-subspaces-perpendicularity-and-independence" id="toc-orthogonality-of-vectors-and-subspaces-perpendicularity-and-independence" class="nav-link active" data-scroll-target="#orthogonality-of-vectors-and-subspaces-perpendicularity-and-independence">Orthogonality of Vectors and Subspaces: Perpendicularity and Independence</a></li>
+  <li><a href="#projections-finding-the-closest-vector-in-a-subspace" id="toc-projections-finding-the-closest-vector-in-a-subspace" class="nav-link" data-scroll-target="#projections-finding-the-closest-vector-in-a-subspace">Projections: Finding the Closest Vector in a Subspace</a></li>
+  <li><a href="#least-squares-approximations-handling-inconsistent-systems" id="toc-least-squares-approximations-handling-inconsistent-systems" class="nav-link" data-scroll-target="#least-squares-approximations-handling-inconsistent-systems">Least Squares Approximations: Handling Inconsistent Systems</a></li>
+  <li><a href="#orthogonal-matrices-preserving-lengths-and-angles" id="toc-orthogonal-matrices-preserving-lengths-and-angles" class="nav-link" data-scroll-target="#orthogonal-matrices-preserving-lengths-and-angles">Orthogonal Matrices: Preserving Lengths and Angles</a></li>
+  <li><a href="#gram-schmidt-process-constructing-orthogonal-bases" id="toc-gram-schmidt-process-constructing-orthogonal-bases" class="nav-link" data-scroll-target="#gram-schmidt-process-constructing-orthogonal-bases">Gram-Schmidt Process: Constructing Orthogonal Bases</a></li>
+  <li><a href="#qr-factorization-expressing-a-matrix-using-orthogonal-and-triangular-components" id="toc-qr-factorization-expressing-a-matrix-using-orthogonal-and-triangular-components" class="nav-link" data-scroll-target="#qr-factorization-expressing-a-matrix-using-orthogonal-and-triangular-components">QR Factorization: Expressing a Matrix Using Orthogonal and Triangular Components</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/page2.html">Week 02</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/orthogonality.html">👨‍🏫 Orthogonality in Vector Space Applications</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Unifying Coordinate Geometry with Linear Algebra</h1>
+<h1 class="title">Orthogonality: A Powerful Tool in Linear Algebra</h1>
 </div>
 
 
@@ -305,16 +297,10 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Siju Swamy </p>
+             <p>Dr.&nbsp;<a href="#">Soman K P</a> </p>
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">09 October 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -324,142 +310,184 @@ window.Quarto = {
 </header>
 
 
-<section id="generalization-power-of-linear-algebra" class="level1">
-<h1>Generalization Power of Linear Algebra</h1>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this discussion, we will bridge the gap between coordinate geometry and linear algebra by exploring how geometric objects such as lines and planes can be represented algebraically. This journey begins with familiar notions from high school geometry, such as lines and planes in 3D, and leads us into the powerful abstractions provided by linear algebra, such as vector spaces, subspaces, and matrices.</p>
-<p>We aim to answer the question: <em>Which is better for representing subspaces—basis sets or linear equations?</em> We will use examples from both geometry and algebra to build a unified understanding.</p>
+<p>This session of the “Computational Linear Algebra” focuses on <strong>orthogonality</strong>, a fundamental concept that plays a crucial role in understanding the geometry of vector spaces and solving linear algebra problems. This section explores the orthogonality relationships between the four fundamental subspaces associated with a matrix and introduces the powerful techniques of <strong>projections</strong> and <strong>orthogonal matrices</strong>.</p>
+<section id="orthogonality-of-vectors-and-subspaces-perpendicularity-and-independence" class="level3">
+<h3 class="anchored" data-anchor-id="orthogonality-of-vectors-and-subspaces-perpendicularity-and-independence">Orthogonality of Vectors and Subspaces: Perpendicularity and Independence</h3>
+<p>Two vectors <strong>x</strong> and <strong>y</strong> are considered <strong>orthogonal</strong> if their dot product is zero: <strong>x</strong><sup>T</sup><strong>y</strong> = 0. In geometric terms, this means the vectors are perpendicular to each other. The concept extends to <strong>complex vectors</strong>, where orthogonality is defined using the conjugate transpose: <strong>u</strong><sup>H</sup><strong>v</strong> = 0.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Concept">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Orthogonality</strong> implies that two vectors are perpendicular, enhancing the understanding of their independence and relationships in vector spaces.</p>
+</div>
+</div>
+<p>The idea of orthogonality extends to <strong>subspaces</strong>: Two subspaces <strong>V</strong> and <strong>W</strong> are orthogonal if every vector in <strong>V</strong> is orthogonal to every vector in <strong>W</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Concept">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The orthogonality relationships among the four fundamental subspaces of a matrix <strong>A</strong> are: - The <strong>row space</strong> of <strong>A</strong> and its <strong>nullspace</strong> are orthogonal. - The <strong>column space</strong> of <strong>A</strong> and its <strong>left nullspace</strong> are orthogonal.</p>
+</div>
+</div>
+<p>These orthogonality relationships have important consequences:</p>
+<ul>
+<li>They provide a geometric interpretation of the solutions to linear equations. For example, the fact that the row space and nullspace are orthogonal means that any solution to <strong>Ax</strong> = 0 lies in a direction perpendicular to all the rows of <strong>A</strong>.</li>
+<li>They lead to powerful techniques for solving least squares problems, where we seek to find the “best” solution to an inconsistent system of equations.</li>
+</ul>
 </section>
-<section id="coordinate-geometry-lines-planes-and-directional-cosines" class="level2">
-<h2 class="anchored" data-anchor-id="coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</h2>
-<p>In three-dimensional space, a line can be represented parametrically using a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> and a direction vector <span class="math inline">\(\mathbf{d} = (a, b, c)\)</span>. The parametric equations for the line can be written as:</p>
-<p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + at, \\
-y &amp;= y_0 + bt, \\
-z &amp;= z_0 + ct,
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(t\)</span> is a parameter.</p>
-<p>Alternatively, we can express a line using directional cosines, which are the cosines of the angles that the line makes with the coordinate axes. If the direction cosines are denoted as <span class="math inline">\(l, m, n\)</span>, where:</p>
-<p><span class="math display">\[
-l = \cos(\alpha), \quad m = \cos(\beta), \quad n = \cos(\gamma),
-\]</span></p>
-<p>the equations can be expressed as:</p>
-<p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + k \cdot l, \\
-y &amp;= y_0 + k \cdot m, \\
-z &amp;= z_0 + k \cdot n,
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(k\)</span> is a scalar. This leads to the relationship:</p>
-<p><span class="math display">\[
-\frac{x - x_0}{l} = \frac{y - y_0}{m} = \frac{z - z_0}{n},
-\]</span></p>
-<p>which can be simplified into a set of two independent simultaneous linear equations, demonstrating a deeper connection between the geometric representation and linear algebraic formulation.</p>
-<section id="planes-in-three-dimensional-space" class="level3">
-<h3 class="anchored" data-anchor-id="planes-in-three-dimensional-space">Planes in Three-Dimensional Space</h3>
-<p>The equation of a plane can be defined in multiple ways, but one common representation is through the normal vector and a point on the plane. If we have a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> on the plane and a normal vector <span class="math inline">\(\mathbf{n} = (a, b, c)\)</span>, the equation of the plane can be expressed as:</p>
-<p><span class="math display">\[
-a(x - x_0) + b(y - y_0) + c(z - z_0) = 0.
-\]</span></p>
-<p>Interestingly, if we are given three non-collinear points <span class="math inline">\(P_1(x_1, y_1, z_1)\)</span>, <span class="math inline">\(P_2(x_2, y_2, z_2)\)</span>, and <span class="math inline">\(P_3(x_3, y_3, z_3)\)</span>, we can also find the equation of the plane. The vectors <span class="math inline">\(\mathbf{v_1} = P_2 - P_1\)</span> and <span class="math inline">\(\mathbf{v_2} = P_3 - P_1\)</span> are formed, and their cross product <span class="math inline">\(\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2}\)</span> gives us the normal vector to the plane. Using the normal vector and one of the points, we can derive the plane equation.</p>
-</section>
-</section>
-<section id="linear-algebra-vectors-subspaces-and-basis" class="level2">
-<h2 class="anchored" data-anchor-id="linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</h2>
-<p>In linear algebra, we discuss concepts such as vector spaces, linear combinations, subspaces, and bases. A vector space is a collection of vectors that can be added together and multiplied by scalars. A subspace is a subset of a vector space that is itself a vector space under the same operations.</p>
-<p>A basis of a vector space is a set of vectors that are linearly independent and span the space. For example, in <span class="math inline">\(\mathbb{R}^3\)</span>, the standard basis consists of the vectors <span class="math inline">\(\mathbf{e_1} = (1,0,0)\)</span>, <span class="math inline">\(\mathbf{e_2} = (0,1,0)\)</span>, and <span class="math inline">\(\mathbf{e_3} = (0,0,1)\)</span>.</p>
-<p>The relationship between linear equations and subspaces becomes evident when considering the null space of a matrix. The null space consists of all vectors <span class="math inline">\(\mathbf{x}\)</span> such that <span class="math inline">\(A\mathbf{x} = 0\)</span>, representing a subspace of the vector space defined by <span class="math inline">\(A\)</span>.</p>
-<section id="eigenvalues-and-eigenvectors" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</h3>
-<p>Eigenvalues and eigenvectors play a significant role in linear algebra. Given a square matrix <span class="math inline">\(A\)</span>, an eigenvalue <span class="math inline">\(\lambda\)</span> is defined by the equation:</p>
-<p><span class="math display">\[
-(A - \lambda I)\mathbf{x} = 0,
-\]</span></p>
-<p>where <span class="math inline">\(I\)</span> is the identity matrix and <span class="math inline">\(\mathbf{x}\)</span> is the corresponding eigenvector.</p>
-<p>A major observation in this context is that solving <span class="math inline">\((A - \lambda I)\mathbf{x} = 0\)</span> results in finding a vector <span class="math inline">\(\mathbf{x}\)</span> that is orthogonal to the transformation defined by <span class="math inline">\(A - \lambda I\)</span>. Furthermore, since <span class="math inline">\(A - \lambda I\)</span> contains only two independent rows, the eigenvector <span class="math inline">\(\mathbf{x}\)</span> can be interpreted geometrically as the cross product of the independent vectors of <span class="math inline">\(A - \lambda I\)</span> in 3D space.</p>
-</section>
-<section id="direction-cosines-and-simultaneous-equations" class="level3">
-<h3 class="anchored" data-anchor-id="direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</h3>
-<p>Using the concept of directional cosines, we can represent a line in 3D. By simplifying this representation, we can observe that it reduces to a system of two independent simultaneous linear equations. This further emphasizes the connection between geometric concepts and algebraic formulations.</p>
-</section>
-</section>
-<section id="a-unified-view-of-coordinate-geometry-and-linear-algebra" class="level2">
-<h2 class="anchored" data-anchor-id="a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</h2>
-<p>By synthesizing concepts from coordinate geometry and linear algebra, we find a rich interplay between algebraic equations and geometric interpretations. We observe how algebraic manipulations of vectors, represented in matrices, connect with geometric representations in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
-<p>This unification reveals deeper mathematical structures, particularly the concept of matrices as versatile tools for data representation, operations, and abstract computations. Matrices allow us to encapsulate geometric transformations, linear relationships, and eigenvalue problems in a single mathematical framework. Their compatibility with computation and analysis enhances our ability to model, analyze, and solve real-world problems in multi-dimensional spaces.</p>
-<p>The abstract nature of matrices helps bridge various mathematical concepts, leading to innovative applications across disciplines.</p>
-</section>
-<section id="tasks" class="level2">
-<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<section id="projections-finding-the-closest-vector-in-a-subspace" class="level3">
+<h3 class="anchored" data-anchor-id="projections-finding-the-closest-vector-in-a-subspace">Projections: Finding the Closest Vector in a Subspace</h3>
+<p>The concept of orthogonality leads naturally to the idea of <strong>projections onto subspaces</strong>. Given a vector <strong>b</strong> and a subspace <strong>S</strong>, the projection of <strong>b</strong> onto <strong>S</strong> is the vector <strong>p</strong> in <strong>S</strong> that is closest to <strong>b</strong>. The error vector <strong>e</strong> = <strong>b</strong> - <strong>p</strong> is orthogonal to <strong>S</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Concept">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>projection</strong> of a vector onto a subspace is the closest point in the subspace to the vector, minimizing the error.</p>
+</div>
+</div>
+<p>The two important types of projections are:</p>
 <ol type="1">
-<li><strong>Find the equation of the plane passing through three points: <span class="math inline">\((1, 2, 0)\)</span>, <span class="math inline">\((3, 4, 5)\)</span>, <span class="math inline">\((6, 7, 8)\)</span>.</strong></li>
+<li><p><strong>Projection onto a line:</strong> If <strong>S</strong> is a line spanned by a vector <strong>a</strong>, the projection of <strong>b</strong> onto <strong>S</strong> is given by: <span class="math display">\[\mathbf{p} = \frac{\mathbf{a}^T\mathbf{b}}{\mathbf{a}^T\mathbf{a}} \mathbf{a}\]</span></p></li>
+<li><p><strong>Projection onto a subspace spanned by columns of </strong>A<strong>:</strong> If <strong>S</strong> is the column space of a matrix <strong>A</strong>, the projection of <strong>b</strong> onto <strong>S</strong> is given by: <span class="math display">\[\mathbf{p} = \mathbf{A}(\mathbf{A}^T\mathbf{A})^{-1}\mathbf{A}^T\mathbf{b}\]</span></p>
+<p>The matrix <strong>P</strong> = <strong>A</strong>(<strong>A</strong><sup>T</sup><strong>A</strong>)<sup>-1</sup><strong>A</strong><sup>T</sup> is called the <strong>projection matrix</strong> onto the column space of <strong>A</strong>. It satisfies the properties <strong>P</strong><sup>2</sup> = <strong>P</strong> and <strong>P</strong><sup>T</sup> = <strong>P</strong>, reflecting that projecting a vector twice onto the same subspace doesn’t change it.</p></li>
 </ol>
-<p><strong>Solution:</strong><br>
-To find the equation of the plane passing through the points <span class="math inline">\(P_1(1, 2, 0)\)</span>, <span class="math inline">\(P_2(3, 4, 5)\)</span>, and <span class="math inline">\(P_3(6, 7, 8)\)</span>, we start by forming two vectors from these points:</p>
-<p><span class="math display">\[
-\mathbf{v_1} = P_2 - P_1 = (3 - 1, 4 - 2, 5 - 0) = (2, 2, 5)
-\]</span></p>
-<p><span class="math display">\[
-\mathbf{v_2} = P_3 - P_1 = (6 - 1, 7 - 2, 8 - 0) = (5, 5, 8)
-\]</span></p>
-<p>Next, we find the normal vector <span class="math inline">\(\mathbf{n}\)</span> to the plane by taking the cross product of <span class="math inline">\(\mathbf{v_1}\)</span> and <span class="math inline">\(\mathbf{v_2}\)</span>:</p>
-<p><span class="math display">\[
-\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2} =
-\begin{vmatrix}
-\hat{i} &amp; \hat{j} &amp; \hat{k} \\
-2 &amp; 2 &amp; 5 \\
-5 &amp; 5 &amp; 8
-\end{vmatrix}
-\]</span></p>
-<p>Calculating the determinant, we have:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(2 \cdot 8 - 5 \cdot 5) - \hat{j}(2 \cdot 8 - 5 \cdot 5) + \hat{k}(2 \cdot 5 - 2 \cdot 5)
-\]</span></p>
-<p>This simplifies to:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(-9) + \hat{j}(9) + \hat{k}(0) = (-9, 9, 0)
-\]</span></p>
-<p>The equation of the plane can be expressed as:</p>
-<p><span class="math display">\[
-ax + by + cz = d
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{n} = (a, b, c) = (-9, 9, 0)\)</span>. Using the point <span class="math inline">\(P_1(1, 2, 0)\)</span> to find <span class="math inline">\(d\)</span>:</p>
-<p><span class="math display">\[
--9(1) + 9(2) + 0(0) = d
-\]</span></p>
-<p>This gives:</p>
-<p><span class="math display">\[
--9 + 18 = d \implies d = 9
-\]</span></p>
-<p>Thus, the equation of the plane is:</p>
-<p><span class="math display">\[
--9x + 9y = 9 \quad \text{or} \quad x - y = -1.
-\]</span></p>
-<ol start="2" type="1">
-<li><strong>Find the directional cosines of the line passing through points <span class="math inline">\((1, 1, 1)\)</span> and <span class="math inline">\((4, 5, 6)\)</span>.</strong></li>
-</ol>
-<p><strong>Solution:</strong></p>
-<p>The direction vector of the line is:</p>
-<p><span class="math display">\[
-\mathbf{d} = (4 - 1, 5 - 1, 6 - 1) = (3, 4, 5).
-\]</span></p>
-<p>The magnitude of the direction vector is:</p>
-<p><span class="math display">\[
-|\mathbf{d}| = \sqrt{3^2 + 4^2 + 5^2} = \sqrt{9 + 16 + 25} = \sqrt{50}.
-\]</span></p>
-<p>The directional cosines are:</p>
-<p><span class="math display">\[
-l = \frac{3}{\sqrt{50}}, \quad m = \frac{4}{\sqrt{50}}, \quad n = \frac{5}{\sqrt{50}}.
-\]</span></p>
-<p>Thus, the directional cosines are <span class="math inline">\(l = \frac{3}{\sqrt{50}}\)</span>, <span class="math inline">\(m = \frac{4}{\sqrt{50}}\)</span>, and <span class="math inline">\(n = \frac{5}{\sqrt{50}}\)</span>.</p>
-<hr>
-
-
+<div class="callout callout-style-default callout-note callout-titled" title="Key Concept">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>projection matrix</strong> is essential for solving least squares problems, providing the best approximation of a vector within a column space.</p>
+</div>
+</div>
 </section>
+<section id="least-squares-approximations-handling-inconsistent-systems" class="level3">
+<h3 class="anchored" data-anchor-id="least-squares-approximations-handling-inconsistent-systems">Least Squares Approximations: Handling Inconsistent Systems</h3>
+<p>Projections play a crucial role in solving <strong>least squares problems</strong>, which arise when we have an inconsistent system of equations <strong>Ax</strong> = <strong>b</strong> (i.e., a system with no exact solution). In such cases, we seek to find the vector <strong>x</strong> that minimizes the squared error ||<strong>b</strong> - <strong>A</strong>x||<sup>2</sup>. This leads to the <strong>normal equations</strong>:</p>
+<p><span class="math display">\[\mathbf{A}^T\mathbf{A}\hat{\mathbf{x}} = \mathbf{A}^T\mathbf{b}\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Concept">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>normal equations</strong> are derived from minimizing the squared error in least squares problems, leading to the best solution approximation.</p>
+</div>
+</div>
+<p>The solution <span class="math inline">\(\hat{\mathbf{x}}\)</span> gives the coefficients of the projection of <strong>b</strong> onto the column space of <strong>A</strong>. This projection, <strong>p</strong> = <strong>A</strong><span class="math inline">\(\hat{\mathbf{x}}\)</span>, represents the “best” approximation to <strong>b</strong> that we can achieve within the column space of <strong>A</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Concept">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Least squares approximations</strong> are commonly applied in regression analysis to determine the best-fitting line for data points.</p>
+</div>
+</div>
+</section>
+<section id="orthogonal-matrices-preserving-lengths-and-angles" class="level3">
+<h3 class="anchored" data-anchor-id="orthogonal-matrices-preserving-lengths-and-angles">Orthogonal Matrices: Preserving Lengths and Angles</h3>
+<p>An <strong>orthogonal matrix</strong> is a square matrix <strong>Q</strong> whose columns are orthonormal. This means that the columns are orthogonal to each other and have unit length. As a result, orthogonal matrices satisfy the property <strong>Q</strong><sup>T</sup><strong>Q</strong> = <strong>I</strong>, which implies <strong>Q</strong><sup>T</sup> = <strong>Q</strong><sup>-1</sup>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Concept">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Orthogonal matrices</strong> preserve lengths and angles during transformations, making them invaluable in numerical computations.</p>
+</div>
+</div>
+<p>Orthogonal matrices have several important properties:</p>
+<ul>
+<li>They preserve lengths: ||<strong>Qx</strong>|| = ||<strong>x</strong>|| for any vector <strong>x</strong>.</li>
+<li>They preserve angles: (<strong>Qx</strong>)<sup>T</sup>(<strong>Qy</strong>) = <strong>x</strong><sup>T</sup><strong>y</strong> for any vectors <strong>x</strong> and <strong>y</strong>.</li>
+<li>They are computationally efficient to invert, as their inverse is simply their transpose.</li>
+</ul>
+</section>
+<section id="gram-schmidt-process-constructing-orthogonal-bases" class="level3">
+<h3 class="anchored" data-anchor-id="gram-schmidt-process-constructing-orthogonal-bases">Gram-Schmidt Process: Constructing Orthogonal Bases</h3>
+<p>The <strong>Gram-Schmidt process</strong> provides a systematic way to construct an orthogonal basis for a subspace. Given a set of linearly independent vectors <strong>a</strong>, <strong>b</strong>, <strong>c</strong>, …, the process generates a set of orthogonal vectors <strong>q</strong><sub>1</sub>, <strong>q</strong><sub>2</sub>, <strong>q</strong><sub>3</sub>, … as follows:</p>
+<ol type="1">
+<li><strong>q</strong><sub>1</sub> = <strong>a</strong> / ||<strong>a</strong>||</li>
+<li><span class="math inline">\(q_2=\frac{\mathbf{b} - (\mathbf{q}_1^T\mathbf{b})\mathbf{q}_1}{||\mathbf{b} - (\mathbf{q}_1^T\mathbf{b})\mathbf{q}_1||}\)</span></li>
+<li><span class="math inline">\(q_3 =\frac{\mathbf{c} - (\mathbf{q}_1^T\mathbf{c})\mathbf{q}_1 - (\mathbf{q}_2^T\mathbf{c})\mathbf{q}_2}{||\mathbf{c} - (\mathbf{q}_1^T\mathbf{c})\mathbf{q}_1 - (\mathbf{q}_2^T\mathbf{c})\mathbf{q}_2||}\)</span></li>
+<li>…</li>
+</ol>
+<p>At each step, we subtract the projection of the current vector onto the subspace spanned by the previous orthogonal vectors, ensuring that the resulting vector is orthogonal to all the previous ones.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Concept">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>Gram-Schmidt process</strong> systematically constructs an orthogonal basis, simplifying many linear algebra computations.</p>
+</div>
+</div>
+</section>
+<section id="qr-factorization-expressing-a-matrix-using-orthogonal-and-triangular-components" class="level3">
+<h3 class="anchored" data-anchor-id="qr-factorization-expressing-a-matrix-using-orthogonal-and-triangular-components">QR Factorization: Expressing a Matrix Using Orthogonal and Triangular Components</h3>
+<p>The Gram-Schmidt process leads to the <strong>QR factorization</strong>, a powerful matrix factorization that expresses any matrix <strong>A</strong> as the product of an orthogonal matrix <strong>Q</strong> and an upper triangular matrix <strong>R</strong>:</p>
+<p><span class="math display">\[\mathbf{A} = \mathbf{QR}\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Concept">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>QR factorization</strong> allows us to express a matrix as a product of orthogonal and triangular components, enhancing numerical stability in computations.</p>
+</div>
+</div>
+<p>The columns of <strong>Q</strong> form an orthonormal basis for the column space of <strong>A</strong>, while <strong>R</strong> captures the linear combinations of the columns of <strong>Q</strong> that produce the columns of <strong>A</strong>.</p>
+<p>The QR factorization has numerous applications in linear algebra, including:</p>
+<ul>
+<li>Solving least squares problems efficiently.</li>
+<li>Computing eigenvalues and eigenvectors.</li>
+<li>Performing stable numerical computations.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -892,13 +920,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../2024/weeks/week01/page.html" class="pagination-link" aria-label="Week 01">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01</span>
+      <a href="../../../2024/weeks/week02/page2.html" class="pagination-link" aria-label="Week 02">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 02</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../2024/weeks/week01/Vectors_matrices.html" class="pagination-link" aria-label="👨‍🏫 Basics of Linear Algebra">
-        <span class="nav-page-text">👨‍🏫 Basics of Linear Algebra</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../2024/weeks/week02/eigen_value_vector.html" class="pagination-link" aria-label="👨‍🏫 Unleashes Power of the Linear Algebra">
+        <span class="nav-page-text">👨‍🏫 Unleashes Power of the Linear Algebra</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

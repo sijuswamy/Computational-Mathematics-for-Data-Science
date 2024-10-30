@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Soman K P">
-<meta name="dcterms.date" content="2024-10-09">
 
-<title>Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science</title>
+<title>Five Fundamental Decompositions in Linear Algebra (Adapted from Gilbert Strang’s Approach) – Computational Mathematics for Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../2024/weeks/week01/Vectors_matrices.html" rel="next">
-<link href="../../../2024/weeks/week01/page.html" rel="prev">
+<link href="../../../2024/weeks/week02/learning_from_data.html" rel="next">
+<link href="../../../2024/weeks/week02/svd.html" rel="prev">
 <link href="../../../figures/logos/logo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -103,9 +102,11 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../../css/custom_style.css">
 <link rel="stylesheet" href="../../../css/syllabus.css">
-<meta property="og:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta property="og:title" content="Five Fundamental Decompositions in Linear Algebra (Adapted from Gilbert Strang’s Approach) – Computational Mathematics for Data Science">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Computational Mathematics for Data Science">
-<meta name="twitter:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta name="twitter:title" content="Five Fundamental Decompositions in Linear Algebra (Adapted from Gilbert Strang’s Approach) – Computational Mathematics for Data Science">
+<meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@<twitter-handle>">
 <meta name="twitter:site" content="\@<twitter-handle>">
 <meta name="twitter:card" content="summary">
@@ -137,7 +138,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/page2.html">Week 02</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/five_decomposition.html">👨‍🏫 Five Fundamental Decompositions in Linear Algebra</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -168,14 +169,14 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../2024/weeks/week01/page.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 01</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">👨‍🏫 Week-1 Summary</span></a>
   </div>
 </li>
@@ -215,11 +216,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../2024/weeks/week02/page2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 02</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../2024/weeks/week02/orthogonality.html" class="sidebar-item-text sidebar-link">
@@ -246,7 +247,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week02/five_decomposition.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2024/weeks/week02/five_decomposition.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">👨‍🏫 Five Fundamental Decompositions in Linear Algebra</span></a>
   </div>
 </li>
@@ -272,30 +273,37 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#generalization-power-of-linear-algebra" id="toc-generalization-power-of-linear-algebra" class="nav-link active" data-scroll-target="#generalization-power-of-linear-algebra">Generalization Power of Linear Algebra</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#cr-decomposition-column-row-decomposition" id="toc-cr-decomposition-column-row-decomposition" class="nav-link" data-scroll-target="#cr-decomposition-column-row-decomposition">1. CR Decomposition (Column-Row Decomposition)</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#coordinate-geometry-lines-planes-and-directional-cosines" id="toc-coordinate-geometry-lines-planes-and-directional-cosines" class="nav-link" data-scroll-target="#coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</a>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#lu-decomposition" id="toc-lu-decomposition" class="nav-link" data-scroll-target="#lu-decomposition">2. LU Decomposition</a>
   <ul class="collapse">
-  <li><a href="#planes-in-three-dimensional-space" id="toc-planes-in-three-dimensional-space" class="nav-link" data-scroll-target="#planes-in-three-dimensional-space">Planes in Three-Dimensional Space</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
   </ul></li>
-  <li><a href="#linear-algebra-vectors-subspaces-and-basis" id="toc-linear-algebra-vectors-subspaces-and-basis" class="nav-link" data-scroll-target="#linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</a>
+  <li><a href="#spectral-decomposition" id="toc-spectral-decomposition" class="nav-link" data-scroll-target="#spectral-decomposition">3. Spectral Decomposition</a>
   <ul class="collapse">
-  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a></li>
-  <li><a href="#direction-cosines-and-simultaneous-equations" id="toc-direction-cosines-and-simultaneous-equations" class="nav-link" data-scroll-target="#direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
   </ul></li>
-  <li><a href="#a-unified-view-of-coordinate-geometry-and-linear-algebra" id="toc-a-unified-view-of-coordinate-geometry-and-linear-algebra" class="nav-link" data-scroll-target="#a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
+  <li><a href="#qr-decomposition" id="toc-qr-decomposition" class="nav-link" data-scroll-target="#qr-decomposition">4. QR Decomposition</a>
+  <ul class="collapse">
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
   </ul></li>
+  <li><a href="#singular-value-decomposition-svd" id="toc-singular-value-decomposition-svd" class="nav-link" data-scroll-target="#singular-value-decomposition-svd">5. Singular Value Decomposition (SVD)</a>
+  <ul class="collapse">
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
+  </ul></li>
+  <li><a href="#comparative-study-of-the-decompositions" id="toc-comparative-study-of-the-decompositions" class="nav-link" data-scroll-target="#comparative-study-of-the-decompositions">Comparative Study of the Decompositions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/page2.html">Week 02</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/five_decomposition.html">👨‍🏫 Five Fundamental Decompositions in Linear Algebra</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Unifying Coordinate Geometry with Linear Algebra</h1>
+<h1 class="title">Five Fundamental Decompositions in Linear Algebra (Adapted from Gilbert Strang’s Approach)</h1>
 </div>
 
 
@@ -305,16 +313,10 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Siju Swamy </p>
+             <p>Dr.&nbsp;<a href="#">Soman K P</a> </p>
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">09 October 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -324,142 +326,279 @@ window.Quarto = {
 </header>
 
 
-<section id="generalization-power-of-linear-algebra" class="level1">
-<h1>Generalization Power of Linear Algebra</h1>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this discussion, we will bridge the gap between coordinate geometry and linear algebra by exploring how geometric objects such as lines and planes can be represented algebraically. This journey begins with familiar notions from high school geometry, such as lines and planes in 3D, and leads us into the powerful abstractions provided by linear algebra, such as vector spaces, subspaces, and matrices.</p>
-<p>We aim to answer the question: <em>Which is better for representing subspaces—basis sets or linear equations?</em> We will use examples from both geometry and algebra to build a unified understanding.</p>
-</section>
-<section id="coordinate-geometry-lines-planes-and-directional-cosines" class="level2">
-<h2 class="anchored" data-anchor-id="coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</h2>
-<p>In three-dimensional space, a line can be represented parametrically using a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> and a direction vector <span class="math inline">\(\mathbf{d} = (a, b, c)\)</span>. The parametric equations for the line can be written as:</p>
-<p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + at, \\
-y &amp;= y_0 + bt, \\
-z &amp;= z_0 + ct,
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(t\)</span> is a parameter.</p>
-<p>Alternatively, we can express a line using directional cosines, which are the cosines of the angles that the line makes with the coordinate axes. If the direction cosines are denoted as <span class="math inline">\(l, m, n\)</span>, where:</p>
-<p><span class="math display">\[
-l = \cos(\alpha), \quad m = \cos(\beta), \quad n = \cos(\gamma),
-\]</span></p>
-<p>the equations can be expressed as:</p>
-<p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + k \cdot l, \\
-y &amp;= y_0 + k \cdot m, \\
-z &amp;= z_0 + k \cdot n,
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(k\)</span> is a scalar. This leads to the relationship:</p>
-<p><span class="math display">\[
-\frac{x - x_0}{l} = \frac{y - y_0}{m} = \frac{z - z_0}{n},
-\]</span></p>
-<p>which can be simplified into a set of two independent simultaneous linear equations, demonstrating a deeper connection between the geometric representation and linear algebraic formulation.</p>
-<section id="planes-in-three-dimensional-space" class="level3">
-<h3 class="anchored" data-anchor-id="planes-in-three-dimensional-space">Planes in Three-Dimensional Space</h3>
-<p>The equation of a plane can be defined in multiple ways, but one common representation is through the normal vector and a point on the plane. If we have a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> on the plane and a normal vector <span class="math inline">\(\mathbf{n} = (a, b, c)\)</span>, the equation of the plane can be expressed as:</p>
-<p><span class="math display">\[
-a(x - x_0) + b(y - y_0) + c(z - z_0) = 0.
-\]</span></p>
-<p>Interestingly, if we are given three non-collinear points <span class="math inline">\(P_1(x_1, y_1, z_1)\)</span>, <span class="math inline">\(P_2(x_2, y_2, z_2)\)</span>, and <span class="math inline">\(P_3(x_3, y_3, z_3)\)</span>, we can also find the equation of the plane. The vectors <span class="math inline">\(\mathbf{v_1} = P_2 - P_1\)</span> and <span class="math inline">\(\mathbf{v_2} = P_3 - P_1\)</span> are formed, and their cross product <span class="math inline">\(\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2}\)</span> gives us the normal vector to the plane. Using the normal vector and one of the points, we can derive the plane equation.</p>
-</section>
-</section>
-<section id="linear-algebra-vectors-subspaces-and-basis" class="level2">
-<h2 class="anchored" data-anchor-id="linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</h2>
-<p>In linear algebra, we discuss concepts such as vector spaces, linear combinations, subspaces, and bases. A vector space is a collection of vectors that can be added together and multiplied by scalars. A subspace is a subset of a vector space that is itself a vector space under the same operations.</p>
-<p>A basis of a vector space is a set of vectors that are linearly independent and span the space. For example, in <span class="math inline">\(\mathbb{R}^3\)</span>, the standard basis consists of the vectors <span class="math inline">\(\mathbf{e_1} = (1,0,0)\)</span>, <span class="math inline">\(\mathbf{e_2} = (0,1,0)\)</span>, and <span class="math inline">\(\mathbf{e_3} = (0,0,1)\)</span>.</p>
-<p>The relationship between linear equations and subspaces becomes evident when considering the null space of a matrix. The null space consists of all vectors <span class="math inline">\(\mathbf{x}\)</span> such that <span class="math inline">\(A\mathbf{x} = 0\)</span>, representing a subspace of the vector space defined by <span class="math inline">\(A\)</span>.</p>
-<section id="eigenvalues-and-eigenvectors" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</h3>
-<p>Eigenvalues and eigenvectors play a significant role in linear algebra. Given a square matrix <span class="math inline">\(A\)</span>, an eigenvalue <span class="math inline">\(\lambda\)</span> is defined by the equation:</p>
-<p><span class="math display">\[
-(A - \lambda I)\mathbf{x} = 0,
-\]</span></p>
-<p>where <span class="math inline">\(I\)</span> is the identity matrix and <span class="math inline">\(\mathbf{x}\)</span> is the corresponding eigenvector.</p>
-<p>A major observation in this context is that solving <span class="math inline">\((A - \lambda I)\mathbf{x} = 0\)</span> results in finding a vector <span class="math inline">\(\mathbf{x}\)</span> that is orthogonal to the transformation defined by <span class="math inline">\(A - \lambda I\)</span>. Furthermore, since <span class="math inline">\(A - \lambda I\)</span> contains only two independent rows, the eigenvector <span class="math inline">\(\mathbf{x}\)</span> can be interpreted geometrically as the cross product of the independent vectors of <span class="math inline">\(A - \lambda I\)</span> in 3D space.</p>
-</section>
-<section id="direction-cosines-and-simultaneous-equations" class="level3">
-<h3 class="anchored" data-anchor-id="direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</h3>
-<p>Using the concept of directional cosines, we can represent a line in 3D. By simplifying this representation, we can observe that it reduces to a system of two independent simultaneous linear equations. This further emphasizes the connection between geometric concepts and algebraic formulations.</p>
-</section>
-</section>
-<section id="a-unified-view-of-coordinate-geometry-and-linear-algebra" class="level2">
-<h2 class="anchored" data-anchor-id="a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</h2>
-<p>By synthesizing concepts from coordinate geometry and linear algebra, we find a rich interplay between algebraic equations and geometric interpretations. We observe how algebraic manipulations of vectors, represented in matrices, connect with geometric representations in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
-<p>This unification reveals deeper mathematical structures, particularly the concept of matrices as versatile tools for data representation, operations, and abstract computations. Matrices allow us to encapsulate geometric transformations, linear relationships, and eigenvalue problems in a single mathematical framework. Their compatibility with computation and analysis enhances our ability to model, analyze, and solve real-world problems in multi-dimensional spaces.</p>
-<p>The abstract nature of matrices helps bridge various mathematical concepts, leading to innovative applications across disciplines.</p>
-</section>
-<section id="tasks" class="level2">
-<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
-<ol type="1">
-<li><strong>Find the equation of the plane passing through three points: <span class="math inline">\((1, 2, 0)\)</span>, <span class="math inline">\((3, 4, 5)\)</span>, <span class="math inline">\((6, 7, 8)\)</span>.</strong></li>
-</ol>
-<p><strong>Solution:</strong><br>
-To find the equation of the plane passing through the points <span class="math inline">\(P_1(1, 2, 0)\)</span>, <span class="math inline">\(P_2(3, 4, 5)\)</span>, and <span class="math inline">\(P_3(6, 7, 8)\)</span>, we start by forming two vectors from these points:</p>
-<p><span class="math display">\[
-\mathbf{v_1} = P_2 - P_1 = (3 - 1, 4 - 2, 5 - 0) = (2, 2, 5)
-\]</span></p>
-<p><span class="math display">\[
-\mathbf{v_2} = P_3 - P_1 = (6 - 1, 7 - 2, 8 - 0) = (5, 5, 8)
-\]</span></p>
-<p>Next, we find the normal vector <span class="math inline">\(\mathbf{n}\)</span> to the plane by taking the cross product of <span class="math inline">\(\mathbf{v_1}\)</span> and <span class="math inline">\(\mathbf{v_2}\)</span>:</p>
-<p><span class="math display">\[
-\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2} =
-\begin{vmatrix}
-\hat{i} &amp; \hat{j} &amp; \hat{k} \\
-2 &amp; 2 &amp; 5 \\
-5 &amp; 5 &amp; 8
-\end{vmatrix}
-\]</span></p>
-<p>Calculating the determinant, we have:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(2 \cdot 8 - 5 \cdot 5) - \hat{j}(2 \cdot 8 - 5 \cdot 5) + \hat{k}(2 \cdot 5 - 2 \cdot 5)
-\]</span></p>
-<p>This simplifies to:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(-9) + \hat{j}(9) + \hat{k}(0) = (-9, 9, 0)
-\]</span></p>
-<p>The equation of the plane can be expressed as:</p>
-<p><span class="math display">\[
-ax + by + cz = d
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{n} = (a, b, c) = (-9, 9, 0)\)</span>. Using the point <span class="math inline">\(P_1(1, 2, 0)\)</span> to find <span class="math inline">\(d\)</span>:</p>
-<p><span class="math display">\[
--9(1) + 9(2) + 0(0) = d
-\]</span></p>
-<p>This gives:</p>
-<p><span class="math display">\[
--9 + 18 = d \implies d = 9
-\]</span></p>
-<p>Thus, the equation of the plane is:</p>
-<p><span class="math display">\[
--9x + 9y = 9 \quad \text{or} \quad x - y = -1.
-\]</span></p>
-<ol start="2" type="1">
-<li><strong>Find the directional cosines of the line passing through points <span class="math inline">\((1, 1, 1)\)</span> and <span class="math inline">\((4, 5, 6)\)</span>.</strong></li>
-</ol>
-<p><strong>Solution:</strong></p>
-<p>The direction vector of the line is:</p>
-<p><span class="math display">\[
-\mathbf{d} = (4 - 1, 5 - 1, 6 - 1) = (3, 4, 5).
-\]</span></p>
-<p>The magnitude of the direction vector is:</p>
-<p><span class="math display">\[
-|\mathbf{d}| = \sqrt{3^2 + 4^2 + 5^2} = \sqrt{9 + 16 + 25} = \sqrt{50}.
-\]</span></p>
-<p>The directional cosines are:</p>
-<p><span class="math display">\[
-l = \frac{3}{\sqrt{50}}, \quad m = \frac{4}{\sqrt{50}}, \quad n = \frac{5}{\sqrt{50}}.
-\]</span></p>
-<p>Thus, the directional cosines are <span class="math inline">\(l = \frac{3}{\sqrt{50}}\)</span>, <span class="math inline">\(m = \frac{4}{\sqrt{50}}\)</span>, and <span class="math inline">\(n = \frac{5}{\sqrt{50}}\)</span>.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Linear algebra provides various tools for decomposing matrices, each with unique applications in engineering, data science, and machine learning. Here we discuss <strong>Five Fundamental Matrix Decompositions</strong>: CR decomposition, LU decomposition, Spectral Decomposition, QR decomposition, and Singular Value Decomposition (SVD). These decompositions help us understand matrix structure, solve linear systems, and analyze large datasets.</p>
 <hr>
-
-
 </section>
+<section id="cr-decomposition-column-row-decomposition" class="level1">
+<h1>1. CR Decomposition (Column-Row Decomposition)</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key Concept</strong>: The <strong>CR decomposition</strong> expresses a matrix <span class="math inline">\(A\)</span> as the product of two matrices—one made up of its columns and the other of its rows:</p>
+<p><span class="math display">\[ A = C R \]</span></p>
+</div>
+</div>
+<p>Given a matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, the CR decomposition is written as:</p>
+<p><span class="math display">\[ A = C R \]</span></p>
+<p>where: - <span class="math inline">\(C \in \mathbb{R}^{m \times k}\)</span> consists of <span class="math inline">\(k\)</span> linearly independent columns of <span class="math inline">\(A\)</span>, - <span class="math inline">\(R \in \mathbb{R}^{k \times n}\)</span> contains corresponding rows that, when multiplied by <span class="math inline">\(C\)</span>, reconstruct <span class="math inline">\(A\)</span>.</p>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>Let’s take an example where <span class="math inline">\(A\)</span> is given by:</p>
+<p><span class="math display">\[ A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 9 \\ 7 &amp; 8 &amp; 15 \end{bmatrix} \]</span></p>
+<p>We can choose the first two columns of <span class="math inline">\(A\)</span> to form the matrix <span class="math inline">\(C\)</span> as they are independent:</p>
+<p><span class="math display">\[ C = \begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 5 \\ 7 &amp; 8 \end{bmatrix} \]</span></p>
+<p>Now, find <span class="math inline">\(R\)</span>, the row reduced echelon form of <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[ R = \begin{bmatrix} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{bmatrix} \]</span></p>
+<p>Thus, the CR decomposition is, <span class="math inline">\(A=CR\)</span>:</p>
+<p><span class="math display">\[ A = \begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 5 \\ 7 &amp; 8 \end{bmatrix} \begin{bmatrix} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{bmatrix} \]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Application in Data Science</strong>: CR decomposition is useful for <strong>dimensionality reduction</strong> by approximating a matrix with lower rank, simplifying large datasets.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="lu-decomposition" class="level1">
+<h1>2. LU Decomposition</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key Concept</strong>: The <strong>LU decomposition</strong> factors a matrix <span class="math inline">\(A\)</span> into a <strong>lower triangular matrix</strong> <span class="math inline">\(L\)</span> and an <strong>upper triangular matrix</strong> <span class="math inline">\(U\)</span>:</p>
+<p><span class="math display">\[ A = LU \]</span></p>
+</div>
+</div>
+<p>The decomposition exists for square matrices <span class="math inline">\(A\)</span> and can be extended to non-square matrices using pivoting techniques.</p>
+<p>LU decomposition is computed through <strong>Gaussian elimination</strong>. The matrix <span class="math inline">\(A\)</span> is reduced to an upper triangular matrix, and the operations applied are stored in <span class="math inline">\(L\)</span>.</p>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<p>Consider the matrix:</p>
+<p><span class="math display">\[ A = \begin{bmatrix} 4 &amp; 3 \\ 6 &amp; 3 \end{bmatrix} \]</span></p>
+<p>We decompose <span class="math inline">\(A\)</span> into:</p>
+<p><span class="math display">\[ L = \begin{bmatrix} 1 &amp; 0 \\ 1.5 &amp; 1 \end{bmatrix}, \quad U = \begin{bmatrix} 4 &amp; 3 \\ 0 &amp; -1.5 \end{bmatrix} \]</span></p>
+<p>Thus, the LU decomposition is:</p>
+<p><span class="math display">\[ A = \begin{bmatrix} 1 &amp; 0 \\ 1.5 &amp; 1 \end{bmatrix} \begin{bmatrix} 4 &amp; 3 \\ 0 &amp; -1.5 \end{bmatrix} \]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Application in Engineering</strong>: LU decomposition is used for efficiently solving systems of linear equations by forward and backward substitution.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="spectral-decomposition" class="level1">
+<h1>3. Spectral Decomposition</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key Concept</strong>: The <strong>Spectral Decomposition</strong> applies to <strong>symmetric matrices</strong> and expresses <span class="math inline">\(A\)</span> as:</p>
+<p><span class="math display">\[ A = Q \Lambda Q^T \]</span></p>
+</div>
+</div>
+<p>Where: - <span class="math inline">\(Q\)</span> is an orthogonal matrix with eigenvectors of <span class="math inline">\(A\)</span>, - <span class="math inline">\(\Lambda\)</span> is a diagonal matrix with eigenvalues of <span class="math inline">\(A\)</span>.</p>
+<p>For any <strong>symmetric matrix</strong> <span class="math inline">\(A\)</span>, its eigenvectors form an <strong>orthogonal basis</strong>, and <span class="math inline">\(A\)</span> can be diagonalized as:</p>
+<p><span class="math display">\[ A = Q \Lambda Q^T \]</span></p>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example</h3>
+<p>Let:</p>
+<p><span class="math display">\[ A = \begin{bmatrix} 4 &amp; 1 \\ 1 &amp; 3 \end{bmatrix} \]</span></p>
+<p>The eigenvalues are <span class="math inline">\(\lambda_1 = 5\)</span> and <span class="math inline">\(\lambda_2 = 2\)</span>, and the eigenvectors are:</p>
+<p><span class="math display">\[ v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad v_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix} \]</span></p>
+<p>Thus:</p>
+<p><span class="math display">\[ Q = \begin{bmatrix} 1/\sqrt{2} &amp; -1/\sqrt{2} \\ 1/\sqrt{2} &amp; 1/\sqrt{2} \end{bmatrix}, \quad \Lambda = \begin{bmatrix} 5 &amp; 0 \\ 0 &amp; 2 \end{bmatrix} \]</span></p>
+<p>So, the spectral decomposition is:</p>
+<p><span class="math display">\[ A = Q \Lambda Q^T \]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Application in PCA</strong>: Spectral decomposition is widely used in <strong>Principal Component Analysis (PCA)</strong>, where data is projected onto principal components to reduce dimensionality.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="qr-decomposition" class="level1">
+<h1>4. QR Decomposition</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key Concept</strong>: The <strong>QR decomposition</strong> factors a matrix <span class="math inline">\(A\)</span> into an <strong>orthogonal matrix</strong> <span class="math inline">\(Q\)</span> and an <strong>upper triangular matrix</strong> <span class="math inline">\(R\)</span>:</p>
+<p><span class="math display">\[ A = QR \]</span></p>
+</div>
+</div>
+<p>QR decomposition is computed using the <strong>Gram-Schmidt process</strong>, which orthogonalizes the columns of <span class="math inline">\(A\)</span> to form <span class="math inline">\(Q\)</span>, and the resulting triangular factors are stored in <span class="math inline">\(R\)</span>.</p>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example</h3>
+<p>Given the matrix:</p>
+<p><span class="math display">\[ A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6 \end{bmatrix} \]</span></p>
+<p>Using Gram-Schmidt, we obtain:</p>
+<p><span class="math display">\[ Q = \begin{bmatrix} 0.17 &amp; 0.83 \\ 0.50 &amp; 0.12 \\ 0.83 &amp; -0.54 \end{bmatrix}, \quad R = \begin{bmatrix} 6.08 &amp; 7.44 \\ 0 &amp; 0.83 \end{bmatrix} \]</span></p>
+<p>Thus:</p>
+<p><span class="math display">\[ A = QR \]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Application in Machine Learning</strong>: QR decomposition is used in <strong>linear regression</strong> for finding the least-squares solution by solving overdetermined systems.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="singular-value-decomposition-svd" class="level1">
+<h1>5. Singular Value Decomposition (SVD)</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key Concept</strong>: The <strong>Singular Value Decomposition (SVD)</strong> of any matrix <span class="math inline">\(A\)</span> expresses it as:</p>
+<p><span class="math display">\[ A = U \Sigma V^T \]</span></p>
+</div>
+</div>
+<p>Where: - <span class="math inline">\(U\)</span> contains <strong>left singular vectors</strong>, - <span class="math inline">\(\Sigma\)</span> is a diagonal matrix with <strong>singular values</strong>, - <span class="math inline">\(V\)</span> contains <strong>right singular vectors</strong>.</p>
+<p>SVD generalizes the eigendecomposition to non-square matrices. Every matrix <span class="math inline">\(A\)</span> can be factored as <span class="math inline">\(A = U \Sigma V^T\)</span>.</p>
+<section id="example-4" class="level3">
+<h3 class="anchored" data-anchor-id="example-4">Example</h3>
+<p>Let:</p>
+<p><span class="math display">\[ A = \begin{bmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{bmatrix} \]</span></p>
+<p>The singular values are <span class="math inline">\(\sigma_1 = 4\)</span> and <span class="math inline">\(\sigma_2 = 2\)</span>. The singular vectors form <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span>:</p>
+<p><span class="math display">\[ U = \begin{bmatrix} 0.71 &amp; -0.71 \\ 0.71 &amp; 0.71 \end{bmatrix}, \quad \Sigma = \begin{bmatrix} 4 &amp; 0 \\ 0 &amp; 2 \end{bmatrix}, \quad V = \begin{bmatrix} 0.71 &amp; -0.71 \\ 0.71 &amp; 0.71 \end{bmatrix} \]</span></p>
+<p>Thus, the SVD is:</p>
+<p><span class="math display">\[ A = U \Sigma V^T \]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Applications in Recommender Systems</strong>: SVD is widely used in <strong>collaborative filtering</strong> algorithms for matrix factorization in recommender systems.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="comparative-study-of-the-decompositions" class="level1">
+<h1>Comparative Study of the Decompositions</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 14%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Decomposition</strong></th>
+<th><strong>Form</strong></th>
+<th><strong>Properties</strong></th>
+<th><strong>Use Cases</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CR Decomposition</td>
+<td><span class="math inline">\(A = CR\)</span></td>
+<td>Low-rank approximation</td>
+<td>Dimensionality reduction in Data Science</td>
+</tr>
+<tr class="even">
+<td>LU Decomposition</td>
+<td><span class="math inline">\(A = LU\)</span></td>
+<td>Efficient solving of linear systems</td>
+<td>Engineering, linear equations</td>
+</tr>
+<tr class="odd">
+<td>Spectral Decomposition</td>
+<td><span class="math inline">\(A = Q \Lambda Q^T\)</span></td>
+<td>Symmetric matrices</td>
+<td>Principal Component Analysis (PCA), vibration analysis</td>
+</tr>
+<tr class="even">
+<td>QR Decomposition</td>
+<td><span class="math inline">\(A = QR\)</span></td>
+<td>Orthogonal matrix, least squares</td>
+<td>Eigenvalue problems, optimization, linear regression</td>
+</tr>
+<tr class="odd">
+<td>Singular Value Decomposition (SVD)</td>
+<td><span class="math inline">\(A = U \Sigma V^T\)</span></td>
+<td>Any matrix, best low-rank approximation</td>
+<td>Recommender systems, text mining</td>
+</tr>
+</tbody>
+</table>
+<p>Each decomposition has a unique set of properties, making them powerful tools in solving problems across engineering, data science, and machine learning.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -892,13 +1031,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../2024/weeks/week01/page.html" class="pagination-link" aria-label="Week 01">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01</span>
+      <a href="../../../2024/weeks/week02/svd.html" class="pagination-link" aria-label="👨‍🏫 Singular Value Decomposition (SVD)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">👨‍🏫 Singular Value Decomposition (SVD)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../2024/weeks/week01/Vectors_matrices.html" class="pagination-link" aria-label="👨‍🏫 Basics of Linear Algebra">
-        <span class="nav-page-text">👨‍🏫 Basics of Linear Algebra</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../2024/weeks/week02/learning_from_data.html" class="pagination-link" aria-label="👨‍🏫 Unpacking the World of Learning from Data">
+        <span class="nav-page-text">👨‍🏫 Unpacking the World of Learning from Data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

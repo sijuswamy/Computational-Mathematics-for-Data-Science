@@ -32,7 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../2024/weeks/week01/algebra_geometry.html" rel="prev">
+<link href="../../../2024/weeks/week02/svd.html" rel="next">
+<link href="../../../2024/weeks/week02/eigen_value_vector.html" rel="prev">
 <link href="../../../figures/logos/logo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +137,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/class_work1.html">👨‍🏫 Class Work Resource</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/page2.html">Week 02</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/class_work1.html">👨‍🏫 Class Work Resource</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -167,11 +168,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../2024/weeks/week01/page.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 01</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link">
@@ -180,8 +181,79 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week01/class_work1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../2024/weeks/week01/Vectors_matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Basics of Linear Algebra</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week01/solution_of_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Solution of System of Equations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/matrix_with_soln.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Creating a matrix A which give a solution, <span class="math inline">\(Ax=b\)</span>!</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week01/vector-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Essentials of Vector Spaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week01/linear_transformations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Linear Transformations- The Essence of Linearity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../2024/weeks/week02/page2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 02</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/orthogonality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Orthogonality in Vector Space Applications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/eigen_value_vector.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Unleashes Power of the Linear Algebra</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/class_work1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">👨‍🏫 Class Work Resource</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/svd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Singular Value Decomposition (SVD)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/five_decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Five Fundamental Decompositions in Linear Algebra</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/learning_from_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Unpacking the World of Learning from Data</span></a>
   </div>
 </li>
       </ul>
@@ -272,7 +344,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/class_work1.html">👨‍🏫 Class Work Resource</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/page2.html">Week 02</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week02/class_work1.html">👨‍🏫 Class Work Resource</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Eigenvalues and Eigenvectors Problems</h1>
 </div>
@@ -1100,11 +1172,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../2024/weeks/week01/algebra_geometry.html" class="pagination-link" aria-label="👨‍🏫 Week-1 Summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">👨‍🏫 Week-1 Summary</span>
+      <a href="../../../2024/weeks/week02/eigen_value_vector.html" class="pagination-link" aria-label="👨‍🏫 Unleashes Power of the Linear Algebra">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">👨‍🏫 Unleashes Power of the Linear Algebra</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../../2024/weeks/week02/svd.html" class="pagination-link" aria-label="👨‍🏫 Singular Value Decomposition (SVD)">
+        <span class="nav-page-text">👨‍🏫 Singular Value Decomposition (SVD)</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Soman K P">
-<meta name="dcterms.date" content="2024-10-09">
 
-<title>Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science</title>
+<title>determinants – Computational Mathematics for Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../2024/weeks/week01/Vectors_matrices.html" rel="next">
-<link href="../../../2024/weeks/week01/page.html" rel="prev">
 <link href="../../../figures/logos/logo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -103,9 +100,11 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../../css/custom_style.css">
 <link rel="stylesheet" href="../../../css/syllabus.css">
-<meta property="og:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta property="og:title" content="Computational Mathematics for Data Science">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Computational Mathematics for Data Science">
-<meta name="twitter:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta name="twitter:title" content="Computational Mathematics for Data Science">
+<meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@<twitter-handle>">
 <meta name="twitter:site" content="\@<twitter-handle>">
 <meta name="twitter:card" content="summary">
@@ -137,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -168,14 +167,14 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../2024/weeks/week01/page.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 01</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">👨‍🏫 Week-1 Summary</span></a>
   </div>
 </li>
@@ -272,30 +271,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#generalization-power-of-linear-algebra" id="toc-generalization-power-of-linear-algebra" class="nav-link active" data-scroll-target="#generalization-power-of-linear-algebra">Generalization Power of Linear Algebra</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#coordinate-geometry-lines-planes-and-directional-cosines" id="toc-coordinate-geometry-lines-planes-and-directional-cosines" class="nav-link" data-scroll-target="#coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</a>
-  <ul class="collapse">
-  <li><a href="#planes-in-three-dimensional-space" id="toc-planes-in-three-dimensional-space" class="nav-link" data-scroll-target="#planes-in-three-dimensional-space">Planes in Three-Dimensional Space</a></li>
-  </ul></li>
-  <li><a href="#linear-algebra-vectors-subspaces-and-basis" id="toc-linear-algebra-vectors-subspaces-and-basis" class="nav-link" data-scroll-target="#linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</a>
-  <ul class="collapse">
-  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a></li>
-  <li><a href="#direction-cosines-and-simultaneous-equations" id="toc-direction-cosines-and-simultaneous-equations" class="nav-link" data-scroll-target="#direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</a></li>
-  </ul></li>
-  <li><a href="#a-unified-view-of-coordinate-geometry-and-linear-algebra" id="toc-a-unified-view-of-coordinate-geometry-and-linear-algebra" class="nav-link" data-scroll-target="#a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
-  </ul></li>
+  <li><a href="#defining-properties-and-calculation-methods-from-permutations-to-cofactors" id="toc-defining-properties-and-calculation-methods-from-permutations-to-cofactors" class="nav-link active" data-scroll-target="#defining-properties-and-calculation-methods-from-permutations-to-cofactors">Defining Properties and Calculation Methods: From Permutations to Cofactors</a></li>
+  <li><a href="#key-properties-and-applications-invertibility-cramers-rule-and-volumes" id="toc-key-properties-and-applications-invertibility-cramers-rule-and-volumes" class="nav-link" data-scroll-target="#key-properties-and-applications-invertibility-cramers-rule-and-volumes">Key Properties and Applications: Invertibility, Cramer’s Rule, and Volumes</a></li>
+  <li><a href="#special-cases-orthogonal-triangular-and-lu-factorization" id="toc-special-cases-orthogonal-triangular-and-lu-factorization" class="nav-link" data-scroll-target="#special-cases-orthogonal-triangular-and-lu-factorization">Special Cases: Orthogonal, Triangular, and LU Factorization</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Unifying Coordinate Geometry with Linear Algebra</h1>
 </div>
 
 
@@ -305,16 +292,10 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Siju Swamy </p>
+             <p>Dr.&nbsp;<a href="#">Soman K P</a> </p>
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">09 October 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -324,142 +305,118 @@ window.Quarto = {
 </header>
 
 
-<section id="generalization-power-of-linear-algebra" class="level1">
-<h1>Generalization Power of Linear Algebra</h1>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this discussion, we will bridge the gap between coordinate geometry and linear algebra by exploring how geometric objects such as lines and planes can be represented algebraically. This journey begins with familiar notions from high school geometry, such as lines and planes in 3D, and leads us into the powerful abstractions provided by linear algebra, such as vector spaces, subspaces, and matrices.</p>
-<p>We aim to answer the question: <em>Which is better for representing subspaces—basis sets or linear equations?</em> We will use examples from both geometry and algebra to build a unified understanding.</p>
-</section>
-<section id="coordinate-geometry-lines-planes-and-directional-cosines" class="level2">
-<h2 class="anchored" data-anchor-id="coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</h2>
-<p>In three-dimensional space, a line can be represented parametrically using a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> and a direction vector <span class="math inline">\(\mathbf{d} = (a, b, c)\)</span>. The parametric equations for the line can be written as:</p>
-<p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + at, \\
-y &amp;= y_0 + bt, \\
-z &amp;= z_0 + ct,
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(t\)</span> is a parameter.</p>
-<p>Alternatively, we can express a line using directional cosines, which are the cosines of the angles that the line makes with the coordinate axes. If the direction cosines are denoted as <span class="math inline">\(l, m, n\)</span>, where:</p>
-<p><span class="math display">\[
-l = \cos(\alpha), \quad m = \cos(\beta), \quad n = \cos(\gamma),
-\]</span></p>
-<p>the equations can be expressed as:</p>
-<p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + k \cdot l, \\
-y &amp;= y_0 + k \cdot m, \\
-z &amp;= z_0 + k \cdot n,
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(k\)</span> is a scalar. This leads to the relationship:</p>
-<p><span class="math display">\[
-\frac{x - x_0}{l} = \frac{y - y_0}{m} = \frac{z - z_0}{n},
-\]</span></p>
-<p>which can be simplified into a set of two independent simultaneous linear equations, demonstrating a deeper connection between the geometric representation and linear algebraic formulation.</p>
-<section id="planes-in-three-dimensional-space" class="level3">
-<h3 class="anchored" data-anchor-id="planes-in-three-dimensional-space">Planes in Three-Dimensional Space</h3>
-<p>The equation of a plane can be defined in multiple ways, but one common representation is through the normal vector and a point on the plane. If we have a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> on the plane and a normal vector <span class="math inline">\(\mathbf{n} = (a, b, c)\)</span>, the equation of the plane can be expressed as:</p>
-<p><span class="math display">\[
-a(x - x_0) + b(y - y_0) + c(z - z_0) = 0.
-\]</span></p>
-<p>Interestingly, if we are given three non-collinear points <span class="math inline">\(P_1(x_1, y_1, z_1)\)</span>, <span class="math inline">\(P_2(x_2, y_2, z_2)\)</span>, and <span class="math inline">\(P_3(x_3, y_3, z_3)\)</span>, we can also find the equation of the plane. The vectors <span class="math inline">\(\mathbf{v_1} = P_2 - P_1\)</span> and <span class="math inline">\(\mathbf{v_2} = P_3 - P_1\)</span> are formed, and their cross product <span class="math inline">\(\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2}\)</span> gives us the normal vector to the plane. Using the normal vector and one of the points, we can derive the plane equation.</p>
-</section>
-</section>
-<section id="linear-algebra-vectors-subspaces-and-basis" class="level2">
-<h2 class="anchored" data-anchor-id="linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</h2>
-<p>In linear algebra, we discuss concepts such as vector spaces, linear combinations, subspaces, and bases. A vector space is a collection of vectors that can be added together and multiplied by scalars. A subspace is a subset of a vector space that is itself a vector space under the same operations.</p>
-<p>A basis of a vector space is a set of vectors that are linearly independent and span the space. For example, in <span class="math inline">\(\mathbb{R}^3\)</span>, the standard basis consists of the vectors <span class="math inline">\(\mathbf{e_1} = (1,0,0)\)</span>, <span class="math inline">\(\mathbf{e_2} = (0,1,0)\)</span>, and <span class="math inline">\(\mathbf{e_3} = (0,0,1)\)</span>.</p>
-<p>The relationship between linear equations and subspaces becomes evident when considering the null space of a matrix. The null space consists of all vectors <span class="math inline">\(\mathbf{x}\)</span> such that <span class="math inline">\(A\mathbf{x} = 0\)</span>, representing a subspace of the vector space defined by <span class="math inline">\(A\)</span>.</p>
-<section id="eigenvalues-and-eigenvectors" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</h3>
-<p>Eigenvalues and eigenvectors play a significant role in linear algebra. Given a square matrix <span class="math inline">\(A\)</span>, an eigenvalue <span class="math inline">\(\lambda\)</span> is defined by the equation:</p>
-<p><span class="math display">\[
-(A - \lambda I)\mathbf{x} = 0,
-\]</span></p>
-<p>where <span class="math inline">\(I\)</span> is the identity matrix and <span class="math inline">\(\mathbf{x}\)</span> is the corresponding eigenvector.</p>
-<p>A major observation in this context is that solving <span class="math inline">\((A - \lambda I)\mathbf{x} = 0\)</span> results in finding a vector <span class="math inline">\(\mathbf{x}\)</span> that is orthogonal to the transformation defined by <span class="math inline">\(A - \lambda I\)</span>. Furthermore, since <span class="math inline">\(A - \lambda I\)</span> contains only two independent rows, the eigenvector <span class="math inline">\(\mathbf{x}\)</span> can be interpreted geometrically as the cross product of the independent vectors of <span class="math inline">\(A - \lambda I\)</span> in 3D space.</p>
-</section>
-<section id="direction-cosines-and-simultaneous-equations" class="level3">
-<h3 class="anchored" data-anchor-id="direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</h3>
-<p>Using the concept of directional cosines, we can represent a line in 3D. By simplifying this representation, we can observe that it reduces to a system of two independent simultaneous linear equations. This further emphasizes the connection between geometric concepts and algebraic formulations.</p>
-</section>
-</section>
-<section id="a-unified-view-of-coordinate-geometry-and-linear-algebra" class="level2">
-<h2 class="anchored" data-anchor-id="a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</h2>
-<p>By synthesizing concepts from coordinate geometry and linear algebra, we find a rich interplay between algebraic equations and geometric interpretations. We observe how algebraic manipulations of vectors, represented in matrices, connect with geometric representations in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
-<p>This unification reveals deeper mathematical structures, particularly the concept of matrices as versatile tools for data representation, operations, and abstract computations. Matrices allow us to encapsulate geometric transformations, linear relationships, and eigenvalue problems in a single mathematical framework. Their compatibility with computation and analysis enhances our ability to model, analyze, and solve real-world problems in multi-dimensional spaces.</p>
-<p>The abstract nature of matrices helps bridge various mathematical concepts, leading to innovative applications across disciplines.</p>
-</section>
-<section id="tasks" class="level2">
-<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
-<ol type="1">
-<li><strong>Find the equation of the plane passing through three points: <span class="math inline">\((1, 2, 0)\)</span>, <span class="math inline">\((3, 4, 5)\)</span>, <span class="math inline">\((6, 7, 8)\)</span>.</strong></li>
-</ol>
-<p><strong>Solution:</strong><br>
-To find the equation of the plane passing through the points <span class="math inline">\(P_1(1, 2, 0)\)</span>, <span class="math inline">\(P_2(3, 4, 5)\)</span>, and <span class="math inline">\(P_3(6, 7, 8)\)</span>, we start by forming two vectors from these points:</p>
-<p><span class="math display">\[
-\mathbf{v_1} = P_2 - P_1 = (3 - 1, 4 - 2, 5 - 0) = (2, 2, 5)
-\]</span></p>
-<p><span class="math display">\[
-\mathbf{v_2} = P_3 - P_1 = (6 - 1, 7 - 2, 8 - 0) = (5, 5, 8)
-\]</span></p>
-<p>Next, we find the normal vector <span class="math inline">\(\mathbf{n}\)</span> to the plane by taking the cross product of <span class="math inline">\(\mathbf{v_1}\)</span> and <span class="math inline">\(\mathbf{v_2}\)</span>:</p>
-<p><span class="math display">\[
-\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2} =
-\begin{vmatrix}
-\hat{i} &amp; \hat{j} &amp; \hat{k} \\
-2 &amp; 2 &amp; 5 \\
-5 &amp; 5 &amp; 8
-\end{vmatrix}
-\]</span></p>
-<p>Calculating the determinant, we have:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(2 \cdot 8 - 5 \cdot 5) - \hat{j}(2 \cdot 8 - 5 \cdot 5) + \hat{k}(2 \cdot 5 - 2 \cdot 5)
-\]</span></p>
-<p>This simplifies to:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(-9) + \hat{j}(9) + \hat{k}(0) = (-9, 9, 0)
-\]</span></p>
-<p>The equation of the plane can be expressed as:</p>
-<p><span class="math display">\[
-ax + by + cz = d
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{n} = (a, b, c) = (-9, 9, 0)\)</span>. Using the point <span class="math inline">\(P_1(1, 2, 0)\)</span> to find <span class="math inline">\(d\)</span>:</p>
-<p><span class="math display">\[
--9(1) + 9(2) + 0(0) = d
-\]</span></p>
-<p>This gives:</p>
-<p><span class="math display">\[
--9 + 18 = d \implies d = 9
-\]</span></p>
-<p>Thus, the equation of the plane is:</p>
-<p><span class="math display">\[
--9x + 9y = 9 \quad \text{or} \quad x - y = -1.
-\]</span></p>
-<ol start="2" type="1">
-<li><strong>Find the directional cosines of the line passing through points <span class="math inline">\((1, 1, 1)\)</span> and <span class="math inline">\((4, 5, 6)\)</span>.</strong></li>
-</ol>
-<p><strong>Solution:</strong></p>
-<p>The direction vector of the line is:</p>
-<p><span class="math display">\[
-\mathbf{d} = (4 - 1, 5 - 1, 6 - 1) = (3, 4, 5).
-\]</span></p>
-<p>The magnitude of the direction vector is:</p>
-<p><span class="math display">\[
-|\mathbf{d}| = \sqrt{3^2 + 4^2 + 5^2} = \sqrt{9 + 16 + 25} = \sqrt{50}.
-\]</span></p>
-<p>The directional cosines are:</p>
-<p><span class="math display">\[
-l = \frac{3}{\sqrt{50}}, \quad m = \frac{4}{\sqrt{50}}, \quad n = \frac{5}{\sqrt{50}}.
-\]</span></p>
-<p>Thus, the directional cosines are <span class="math inline">\(l = \frac{3}{\sqrt{50}}\)</span>, <span class="math inline">\(m = \frac{4}{\sqrt{50}}\)</span>, and <span class="math inline">\(n = \frac{5}{\sqrt{50}}\)</span>.</p>
+<p>title: “Determinants: A Key Value for Square Matrices”</p>
 <hr>
-
-
+<p>Section 5 of the “ZoomNotes for Linear Algebra” explores the concept of the <strong>determinant</strong>, a single number associated with a square matrix that encapsulates crucial information about its properties. The determinant is not only a tool for computation but also a bridge connecting various aspects of linear algebra, including matrix invertibility, solving linear systems, and understanding geometric properties.</p>
+<section id="defining-properties-and-calculation-methods-from-permutations-to-cofactors" class="level3">
+<h3 class="anchored" data-anchor-id="defining-properties-and-calculation-methods-from-permutations-to-cofactors">Defining Properties and Calculation Methods: From Permutations to Cofactors</h3>
+<p>The determinant of a square matrix <strong>A</strong>, denoted as det <strong>A</strong>, can be defined through three fundamental properties:</p>
+<ol type="1">
+<li><strong>Row exchange</strong>: Exchanging two rows of <strong>A</strong> changes the sign of det <strong>A</strong>.</li>
+<li><strong>Linearity in each row</strong>: det <strong>A</strong> is a linear function of each row of <strong>A</strong>, holding all other rows fixed.</li>
+<li><strong>Identity matrix</strong>: det <strong>I</strong> = 1, where <strong>I</strong> is the identity matrix.</li>
+</ol>
+<p>These properties lead to various ways of calculating determinants.</p>
+<section id="determinant-of-a-2x2-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="determinant-of-a-2x2-matrix">Determinant of a 2x2 Matrix</h4>
+<p>For a <span class="math inline">\(2 \times 2\)</span> matrix:</p>
+<p><span class="math display">\[
+A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}
+\]</span></p>
+<p>the determinant is given by:</p>
+<p><span class="math display">\[
+\text{det } A = ad - bc
+\]</span></p>
+<p><strong>Example</strong>: For matrix</p>
+<p><span class="math display">\[
+A = \begin{pmatrix} 3 &amp; 5 \\ 2 &amp; 4 \end{pmatrix}
+\]</span></p>
+<p>the determinant is:</p>
+<p><span class="math display">\[
+\text{det } A = (3)(4) - (5)(2) = 12 - 10 = 2
+\]</span></p>
 </section>
+<section id="determinant-of-a-3x3-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="determinant-of-a-3x3-matrix">Determinant of a 3x3 Matrix</h4>
+<p>For a <span class="math inline">\(3 \times 3\)</span> matrix, the determinant can be calculated using the <strong>“Big Formula,”</strong> which sums over all permutations of the columns:</p>
+<p><span class="math display">\[
+A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{pmatrix}
+\]</span></p>
+<p>The determinant is given by:</p>
+<p><span class="math display">\[
+\text{det } A = a_{11}a_{22}a_{33} - a_{12}a_{21}a_{33} + a_{12}a_{23}a_{31} - a_{13}a_{22}a_{31} + a_{13}a_{21}a_{32} - a_{11}a_{23}a_{32}
+\]</span></p>
+<p>This formula highlights that each term in the determinant takes one element from each row and each column, with a sign determined by the permutation of the columns.</p>
+</section>
+<section id="cofactor-expansion" class="level4">
+<h4 class="anchored" data-anchor-id="cofactor-expansion">Cofactor Expansion</h4>
+<p>Another approach is the <strong>cofactor expansion</strong>, which expresses the determinant in terms of smaller determinants called <strong>cofactors</strong>. A cofactor <span class="math inline">\(C_{ij}\)</span> is obtained by removing row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span> from <strong>A</strong> and multiplying the determinant of the remaining <span class="math inline">\((n-1) \times (n-1)\)</span> matrix by <span class="math inline">\((-1)^{i+j}\)</span>.</p>
+<p>For example, the cofactor expansion along row 1 of a <span class="math inline">\(3 \times 3\)</span> matrix <strong>A</strong> is:</p>
+<p><span class="math display">\[
+\text{det } A = a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13}
+\]</span></p>
+</section>
+</section>
+<section id="key-properties-and-applications-invertibility-cramers-rule-and-volumes" class="level3">
+<h3 class="anchored" data-anchor-id="key-properties-and-applications-invertibility-cramers-rule-and-volumes">Key Properties and Applications: Invertibility, Cramer’s Rule, and Volumes</h3>
+<p>Determinants possess several important properties that make them valuable tools in linear algebra:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Keynotes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Keynotes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Invertibility</strong>: A square matrix <strong>A</strong> is invertible if and only if det <strong>A</strong> ≠ 0. This property stems from the fact that the determinant is related to the volume of the parallelepiped formed by the column vectors of <strong>A</strong>. If the determinant is zero, the volume collapses to zero, indicating that the columns are linearly dependent, and hence <strong>A</strong> is not invertible.</p>
+<p><strong>Determinant of product</strong>: $ (AB) = ( A)( B) $ for any two square matrices <strong>A</strong> and <strong>B</strong> of the same size.</p>
+<p><strong>Determinant of transpose</strong>: $ A = A^T $.</p>
+<p><strong>Determinant of inverse</strong>: $ (A^{-1}) = $ if <strong>A</strong> is invertible.</p>
+</div>
+</div>
+<p>These properties lead to important applications:</p>
+<section id="cramers-rule" class="level4">
+<h4 class="anchored" data-anchor-id="cramers-rule">Cramer’s Rule</h4>
+<p>Cramer’s Rule provides a formula for solving a system of linear equations <span class="math inline">\(Ax = \mathbf{b}\)</span> when <strong>A</strong> is invertible. The solution for each component <span class="math inline">\(x_i\)</span> is given by the ratio of two determinants:</p>
+<p><span class="math display">\[
+x_i = \frac{\text{det } B_i}{\text{det } A}
+\]</span></p>
+<p>where <strong>B</strong><sub>i</sub> is the matrix obtained by replacing the <span class="math inline">\(i\)</span>-th column of <strong>A</strong> with the vector <strong>b</strong>. However, Cramer’s Rule is not computationally efficient for large systems due to the determinant calculations involved.</p>
+</section>
+<section id="volume-calculation" class="level4">
+<h4 class="anchored" data-anchor-id="volume-calculation">Volume Calculation</h4>
+<p>The absolute value of the determinant of a matrix <strong>E</strong> whose rows (or columns) represent the edges of a parallelepiped in <span class="math inline">\(n\)</span>-dimensional space gives the volume of that parallelepiped. This geometric interpretation connects determinants to the concept of linear transformations and their effect on volumes.</p>
+</section>
+</section>
+<section id="special-cases-orthogonal-triangular-and-lu-factorization" class="level3">
+<h3 class="anchored" data-anchor-id="special-cases-orthogonal-triangular-and-lu-factorization">Special Cases: Orthogonal, Triangular, and LU Factorization</h3>
+<p>The following special cases of matrices simplify determinant calculations:</p>
+<ul>
+<li><p><strong>Orthogonal Matrices</strong>: For an orthogonal matrix <strong>Q</strong>, <span class="math inline">\(\text{det } Q = \pm 1\)</span> because <span class="math inline">\(Q^T Q = I\)</span> implies <span class="math inline">\((\text{det } Q)^2 = 1\)</span>.</p></li>
+<li><p><strong>Triangular Matrices</strong>: The determinant of a triangular matrix (upper or lower) is simply the product of its diagonal entries. For example, for an upper triangular matrix:</p></li>
+</ul>
+<p><span class="math display">\[
+A = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 0 &amp; 0 &amp; 6 \end{pmatrix}
+\]</span></p>
+<p>the determinant is:</p>
+<p><span class="math display">\[
+\text{det } A = 1 \cdot 4 \cdot 6 = 24
+\]</span></p>
+<ul>
+<li><strong>LU Factorization</strong>: If a matrix <strong>A</strong> can be factored as <span class="math inline">\(A = LU\)</span>, where <strong>L</strong> is lower triangular and <strong>U</strong> is upper triangular, then:</li>
+</ul>
+<p><span class="math display">\[
+\text{det } A = (\text{det } L)(\text{det } U) = \text{product of the pivots in } U.
+\]</span></p>
+<p>This property arises from the fact that elimination operations used to obtain the LU factorization do not change the determinant (except for possible sign changes due to row exchanges).</p>
+</section>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>Overall, Section 5 of the ” Computational Linear Algebra” establishes determinants as fundamental quantities associated with square matrices. Their connection to invertibility, linear systems, and geometric concepts like volumes makes them essential tools for understanding and solving various linear algebra problems. Furthermore, the properties of determinants, especially in special cases like orthogonal and triangular matrices, offer valuable insights and computational advantages in numerous applications.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -890,18 +847,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../../2024/weeks/week01/page.html" class="pagination-link" aria-label="Week 01">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../../2024/weeks/week01/Vectors_matrices.html" class="pagination-link" aria-label="👨‍🏫 Basics of Linear Algebra">
-        <span class="nav-page-text">👨‍🏫 Basics of Linear Algebra</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Soman K P">
-<meta name="dcterms.date" content="2024-10-09">
 
-<title>Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science</title>
+<title>Solving Linear Equations: A Core Focus of Linear Algebra – Computational Mathematics for Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../2024/weeks/week01/Vectors_matrices.html" rel="next">
-<link href="../../../2024/weeks/week01/page.html" rel="prev">
+<link href="../../../2024/weeks/week02/matrix_with_soln.html" rel="next">
+<link href="../../../2024/weeks/week01/Vectors_matrices.html" rel="prev">
 <link href="../../../figures/logos/logo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -103,9 +102,11 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../../css/custom_style.css">
 <link rel="stylesheet" href="../../../css/syllabus.css">
-<meta property="og:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta property="og:title" content="Solving Linear Equations: A Core Focus of Linear Algebra – Computational Mathematics for Data Science">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Computational Mathematics for Data Science">
-<meta name="twitter:title" content="Unifying Coordinate Geometry with Linear Algebra – Computational Mathematics for Data Science">
+<meta name="twitter:title" content="Solving Linear Equations: A Core Focus of Linear Algebra – Computational Mathematics for Data Science">
+<meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@<twitter-handle>">
 <meta name="twitter:site" content="\@<twitter-handle>">
 <meta name="twitter:card" content="summary">
@@ -137,7 +138,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/solution_of_system.html">👨‍🏫 Solution of System of Equations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -175,7 +176,7 @@ window.Quarto = {
       <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../2024/weeks/week01/algebra_geometry.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">👨‍🏫 Week-1 Summary</span></a>
   </div>
 </li>
@@ -187,7 +188,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week01/solution_of_system.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2024/weeks/week01/solution_of_system.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">👨‍🏫 Solution of System of Equations</span></a>
   </div>
 </li>
@@ -272,20 +273,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#generalization-power-of-linear-algebra" id="toc-generalization-power-of-linear-algebra" class="nav-link active" data-scroll-target="#generalization-power-of-linear-algebra">Generalization Power of Linear Algebra</a>
+  <li><a href="#solving-linear-equations" id="toc-solving-linear-equations" class="nav-link active" data-scroll-target="#solving-linear-equations">Solving Linear Equations</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#coordinate-geometry-lines-planes-and-directional-cosines" id="toc-coordinate-geometry-lines-planes-and-directional-cosines" class="nav-link" data-scroll-target="#coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</a>
-  <ul class="collapse">
-  <li><a href="#planes-in-three-dimensional-space" id="toc-planes-in-three-dimensional-space" class="nav-link" data-scroll-target="#planes-in-three-dimensional-space">Planes in Three-Dimensional Space</a></li>
-  </ul></li>
-  <li><a href="#linear-algebra-vectors-subspaces-and-basis" id="toc-linear-algebra-vectors-subspaces-and-basis" class="nav-link" data-scroll-target="#linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</a>
-  <ul class="collapse">
-  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a></li>
-  <li><a href="#direction-cosines-and-simultaneous-equations" id="toc-direction-cosines-and-simultaneous-equations" class="nav-link" data-scroll-target="#direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</a></li>
-  </ul></li>
-  <li><a href="#a-unified-view-of-coordinate-geometry-and-linear-algebra" id="toc-a-unified-view-of-coordinate-geometry-and-linear-algebra" class="nav-link" data-scroll-target="#a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
+  <li><a href="#inverse-matrices-a-direct-approach" id="toc-inverse-matrices-a-direct-approach" class="nav-link" data-scroll-target="#inverse-matrices-a-direct-approach">Inverse Matrices: A Direct Approach</a></li>
+  <li><a href="#triangular-matrices-and-back-substitution" id="toc-triangular-matrices-and-back-substitution" class="nav-link" data-scroll-target="#triangular-matrices-and-back-substitution">Triangular Matrices and Back Substitution</a></li>
+  <li><a href="#elimination-transforming-matrices-to-triangular-form" id="toc-elimination-transforming-matrices-to-triangular-form" class="nav-link" data-scroll-target="#elimination-transforming-matrices-to-triangular-form">Elimination: Transforming Matrices to Triangular Form</a></li>
+  <li><a href="#row-exchanges-handling-zero-pivots" id="toc-row-exchanges-handling-zero-pivots" class="nav-link" data-scroll-target="#row-exchanges-handling-zero-pivots">Row Exchanges: Handling Zero Pivots</a></li>
+  <li><a href="#transposes-and-symmetric-matrices" id="toc-transposes-and-symmetric-matrices" class="nav-link" data-scroll-target="#transposes-and-symmetric-matrices">Transposes and Symmetric Matrices</a></li>
+  <li><a href="#efficiency-considerations-beyond-inverse-calculation" id="toc-efficiency-considerations-beyond-inverse-calculation" class="nav-link" data-scroll-target="#efficiency-considerations-beyond-inverse-calculation">Efficiency Considerations: Beyond Inverse Calculation</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -293,9 +288,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/algebra_geometry.html">👨‍🏫 Week-1 Summary</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/page.html">Week 01</a></li><li class="breadcrumb-item"><a href="../../../2024/weeks/week01/solution_of_system.html">👨‍🏫 Solution of System of Equations</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Unifying Coordinate Geometry with Linear Algebra</h1>
+<h1 class="title">Solving Linear Equations: A Core Focus of Linear Algebra</h1>
 </div>
 
 
@@ -305,16 +300,10 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Siju Swamy </p>
+             <p>Dr.&nbsp;<a href="#">Soman K P</a> </p>
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">09 October 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -324,139 +313,109 @@ window.Quarto = {
 </header>
 
 
-<section id="generalization-power-of-linear-algebra" class="level1">
-<h1>Generalization Power of Linear Algebra</h1>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this discussion, we will bridge the gap between coordinate geometry and linear algebra by exploring how geometric objects such as lines and planes can be represented algebraically. This journey begins with familiar notions from high school geometry, such as lines and planes in 3D, and leads us into the powerful abstractions provided by linear algebra, such as vector spaces, subspaces, and matrices.</p>
-<p>We aim to answer the question: <em>Which is better for representing subspaces—basis sets or linear equations?</em> We will use examples from both geometry and algebra to build a unified understanding.</p>
-</section>
-<section id="coordinate-geometry-lines-planes-and-directional-cosines" class="level2">
-<h2 class="anchored" data-anchor-id="coordinate-geometry-lines-planes-and-directional-cosines">Coordinate Geometry: Lines, Planes, and Directional Cosines</h2>
-<p>In three-dimensional space, a line can be represented parametrically using a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> and a direction vector <span class="math inline">\(\mathbf{d} = (a, b, c)\)</span>. The parametric equations for the line can be written as:</p>
+<section id="solving-linear-equations" class="level2">
+<h2 class="anchored" data-anchor-id="solving-linear-equations">Solving Linear Equations</h2>
+<p>This section focuses on one of the central applications of linear algebra: <strong>solving systems of linear equations</strong>. It outlines key concepts and techniques for finding solutions to equations of the form <code>Ax = b</code>, where <code>A</code> is a square <code>n x n</code> matrix, <code>x</code> is a vector of unknowns, and <code>b</code> is a known vector.</p>
+<section id="inverse-matrices-a-direct-approach" class="level3">
+<h3 class="anchored" data-anchor-id="inverse-matrices-a-direct-approach">Inverse Matrices: A Direct Approach</h3>
+<p>The most straightforward way to solve <code>Ax = b</code> is to find the <strong>inverse matrix</strong> of <code>A</code>, denoted as <code>A^{-1}</code>. If <code>A^{-1}</code> exists, then the solution <code>x</code> is given by:</p>
 <p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + at, \\
-y &amp;= y_0 + bt, \\
-z &amp;= z_0 + ct,
-\end{aligned}
+x = A^{-1}b
 \]</span></p>
-<p>where <span class="math inline">\(t\)</span> is a parameter.</p>
-<p>Alternatively, we can express a line using directional cosines, which are the cosines of the angles that the line makes with the coordinate axes. If the direction cosines are denoted as <span class="math inline">\(l, m, n\)</span>, where:</p>
+<p>However, finding the inverse matrix can be computationally expensive, especially for large matrices. Furthermore, not all matrices have inverses. A matrix is <strong>invertible</strong> if and only if its determinant is non-zero.</p>
+<section id="key-properties-of-inverse-matrices" class="level4">
+<h4 class="anchored" data-anchor-id="key-properties-of-inverse-matrices">Key Properties of Inverse Matrices</h4>
+<ul>
+<li><strong>Uniqueness</strong>: If an inverse matrix exists, it is unique.</li>
+<li><strong>Relationship to Identity Matrix</strong>: The product of a matrix and its inverse is the identity matrix (<span class="math inline">\(A^{-1}A = I\)</span> and <span class="math inline">\(AA^{-1} = I\)</span>).</li>
+<li><strong>Invertibility and Linear Independence</strong>: A matrix is invertible if and only if its rows (and columns) are linearly independent.</li>
+</ul>
+</section>
+</section>
+<section id="triangular-matrices-and-back-substitution" class="level3">
+<h3 class="anchored" data-anchor-id="triangular-matrices-and-back-substitution">Triangular Matrices and Back Substitution</h3>
+<p>Solving systems of linear equations becomes significantly easier when the matrix <code>A</code> is <strong>triangular</strong>. A triangular matrix has all its entries either above or below the main diagonal equal to zero. There are two types of triangular matrices:</p>
+<ul>
+<li><strong>Upper Triangular</strong>: All entries below the main diagonal are zero.</li>
+<li><strong>Lower Triangular</strong>: All entries above the main diagonal are zero.</li>
+</ul>
+<section id="example-solving-via-back-substitution" class="level4">
+<h4 class="anchored" data-anchor-id="example-solving-via-back-substitution">Example: Solving via Back Substitution</h4>
+<p>Consider an upper triangular system <code>Ux = c</code>:</p>
 <p><span class="math display">\[
-l = \cos(\alpha), \quad m = \cos(\beta), \quad n = \cos(\gamma),
+\begin{bmatrix}
+2 &amp; 3 &amp; 4 \\
+0 &amp; 5 &amp; 6 \\
+0 &amp; 0 &amp; 7
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix} =
+\begin{bmatrix}
+19 \\
+17 \\
+14
+\end{bmatrix}
 \]</span></p>
-<p>the equations can be expressed as:</p>
+<p>We start by solving for <span class="math inline">\(x_3\)</span>, then substitute this value into the second equation to find <span class="math inline">\(x_2\)</span>, and finally into the first equation to find <span class="math inline">\(x_1\)</span>. The solution is:</p>
 <p><span class="math display">\[
-\begin{aligned}
-x &amp;= x_0 + k \cdot l, \\
-y &amp;= y_0 + k \cdot m, \\
-z &amp;= z_0 + k \cdot n,
-\end{aligned}
+x_3 = 2, \quad x_2 = 1, \quad x_1 = 4
 \]</span></p>
-<p>where <span class="math inline">\(k\)</span> is a scalar. This leads to the relationship:</p>
+</section>
+</section>
+<section id="elimination-transforming-matrices-to-triangular-form" class="level3">
+<h3 class="anchored" data-anchor-id="elimination-transforming-matrices-to-triangular-form">Elimination: Transforming Matrices to Triangular Form</h3>
+<p><strong>Elimination</strong> is a technique used to transform a general square matrix into an upper triangular matrix, making it easier to solve by back substitution. This process involves a sequence of row operations, aiming to introduce zeros below the diagonal.</p>
+<section id="example-row-elimination" class="level4">
+<h4 class="anchored" data-anchor-id="example-row-elimination">Example: Row Elimination</h4>
+<p>Consider the matrix:</p>
 <p><span class="math display">\[
-\frac{x - x_0}{l} = \frac{y - y_0}{m} = \frac{z - z_0}{n},
+A = \begin{bmatrix}
+2 &amp; 3 &amp; 4 \\
+4 &amp; 11 &amp; 14 \\
+2 &amp; 8 &amp; 17
+\end{bmatrix}
 \]</span></p>
-<p>which can be simplified into a set of two independent simultaneous linear equations, demonstrating a deeper connection between the geometric representation and linear algebraic formulation.</p>
-<section id="planes-in-three-dimensional-space" class="level3">
-<h3 class="anchored" data-anchor-id="planes-in-three-dimensional-space">Planes in Three-Dimensional Space</h3>
-<p>The equation of a plane can be defined in multiple ways, but one common representation is through the normal vector and a point on the plane. If we have a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span> on the plane and a normal vector <span class="math inline">\(\mathbf{n} = (a, b, c)\)</span>, the equation of the plane can be expressed as:</p>
+<p>After performing elimination steps, the matrix is transformed into:</p>
 <p><span class="math display">\[
-a(x - x_0) + b(y - y_0) + c(z - z_0) = 0.
+U = \begin{bmatrix}
+2 &amp; 3 &amp; 4 \\
+0 &amp; 5 &amp; 6 \\
+0 &amp; 0 &amp; 7
+\end{bmatrix}
 \]</span></p>
-<p>Interestingly, if we are given three non-collinear points <span class="math inline">\(P_1(x_1, y_1, z_1)\)</span>, <span class="math inline">\(P_2(x_2, y_2, z_2)\)</span>, and <span class="math inline">\(P_3(x_3, y_3, z_3)\)</span>, we can also find the equation of the plane. The vectors <span class="math inline">\(\mathbf{v_1} = P_2 - P_1\)</span> and <span class="math inline">\(\mathbf{v_2} = P_3 - P_1\)</span> are formed, and their cross product <span class="math inline">\(\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2}\)</span> gives us the normal vector to the plane. Using the normal vector and one of the points, we can derive the plane equation.</p>
-</section>
-</section>
-<section id="linear-algebra-vectors-subspaces-and-basis" class="level2">
-<h2 class="anchored" data-anchor-id="linear-algebra-vectors-subspaces-and-basis">Linear Algebra: Vectors, Subspaces, and Basis</h2>
-<p>In linear algebra, we discuss concepts such as vector spaces, linear combinations, subspaces, and bases. A vector space is a collection of vectors that can be added together and multiplied by scalars. A subspace is a subset of a vector space that is itself a vector space under the same operations.</p>
-<p>A basis of a vector space is a set of vectors that are linearly independent and span the space. For example, in <span class="math inline">\(\mathbb{R}^3\)</span>, the standard basis consists of the vectors <span class="math inline">\(\mathbf{e_1} = (1,0,0)\)</span>, <span class="math inline">\(\mathbf{e_2} = (0,1,0)\)</span>, and <span class="math inline">\(\mathbf{e_3} = (0,0,1)\)</span>.</p>
-<p>The relationship between linear equations and subspaces becomes evident when considering the null space of a matrix. The null space consists of all vectors <span class="math inline">\(\mathbf{x}\)</span> such that <span class="math inline">\(A\mathbf{x} = 0\)</span>, representing a subspace of the vector space defined by <span class="math inline">\(A\)</span>.</p>
-<section id="eigenvalues-and-eigenvectors" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</h3>
-<p>Eigenvalues and eigenvectors play a significant role in linear algebra. Given a square matrix <span class="math inline">\(A\)</span>, an eigenvalue <span class="math inline">\(\lambda\)</span> is defined by the equation:</p>
+<p>This transformation allows for efficient solving using <strong>LU factorization</strong>, where:</p>
 <p><span class="math display">\[
-(A - \lambda I)\mathbf{x} = 0,
+A = LU
 \]</span></p>
-<p>where <span class="math inline">\(I\)</span> is the identity matrix and <span class="math inline">\(\mathbf{x}\)</span> is the corresponding eigenvector.</p>
-<p>A major observation in this context is that solving <span class="math inline">\((A - \lambda I)\mathbf{x} = 0\)</span> results in finding a vector <span class="math inline">\(\mathbf{x}\)</span> that is orthogonal to the transformation defined by <span class="math inline">\(A - \lambda I\)</span>. Furthermore, since <span class="math inline">\(A - \lambda I\)</span> contains only two independent rows, the eigenvector <span class="math inline">\(\mathbf{x}\)</span> can be interpreted geometrically as the cross product of the independent vectors of <span class="math inline">\(A - \lambda I\)</span> in 3D space.</p>
-</section>
-<section id="direction-cosines-and-simultaneous-equations" class="level3">
-<h3 class="anchored" data-anchor-id="direction-cosines-and-simultaneous-equations">Direction Cosines and Simultaneous Equations</h3>
-<p>Using the concept of directional cosines, we can represent a line in 3D. By simplifying this representation, we can observe that it reduces to a system of two independent simultaneous linear equations. This further emphasizes the connection between geometric concepts and algebraic formulations.</p>
 </section>
 </section>
-<section id="a-unified-view-of-coordinate-geometry-and-linear-algebra" class="level2">
-<h2 class="anchored" data-anchor-id="a-unified-view-of-coordinate-geometry-and-linear-algebra">A Unified View of Coordinate Geometry and Linear Algebra</h2>
-<p>By synthesizing concepts from coordinate geometry and linear algebra, we find a rich interplay between algebraic equations and geometric interpretations. We observe how algebraic manipulations of vectors, represented in matrices, connect with geometric representations in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
-<p>This unification reveals deeper mathematical structures, particularly the concept of matrices as versatile tools for data representation, operations, and abstract computations. Matrices allow us to encapsulate geometric transformations, linear relationships, and eigenvalue problems in a single mathematical framework. Their compatibility with computation and analysis enhances our ability to model, analyze, and solve real-world problems in multi-dimensional spaces.</p>
-<p>The abstract nature of matrices helps bridge various mathematical concepts, leading to innovative applications across disciplines.</p>
-</section>
-<section id="tasks" class="level2">
-<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<section id="row-exchanges-handling-zero-pivots" class="level3">
+<h3 class="anchored" data-anchor-id="row-exchanges-handling-zero-pivots">Row Exchanges: Handling Zero Pivots</h3>
+<p>During elimination, if a diagonal element (pivot) is zero, we perform <strong>row exchanges</strong>. Row exchanges are represented by <strong>permutation matrices</strong>. The general solution for <code>Ax = b</code> involves:</p>
 <ol type="1">
-<li><strong>Find the equation of the plane passing through three points: <span class="math inline">\((1, 2, 0)\)</span>, <span class="math inline">\((3, 4, 5)\)</span>, <span class="math inline">\((6, 7, 8)\)</span>.</strong></li>
+<li>Find <code>P</code> such that <code>PA = LU</code>.</li>
+<li>Solve <code>Ly = Pb</code> using forward substitution.</li>
+<li>Solve <code>Ux = y</code> using back substitution.</li>
 </ol>
-<p><strong>Solution:</strong><br>
-To find the equation of the plane passing through the points <span class="math inline">\(P_1(1, 2, 0)\)</span>, <span class="math inline">\(P_2(3, 4, 5)\)</span>, and <span class="math inline">\(P_3(6, 7, 8)\)</span>, we start by forming two vectors from these points:</p>
-<p><span class="math display">\[
-\mathbf{v_1} = P_2 - P_1 = (3 - 1, 4 - 2, 5 - 0) = (2, 2, 5)
-\]</span></p>
-<p><span class="math display">\[
-\mathbf{v_2} = P_3 - P_1 = (6 - 1, 7 - 2, 8 - 0) = (5, 5, 8)
-\]</span></p>
-<p>Next, we find the normal vector <span class="math inline">\(\mathbf{n}\)</span> to the plane by taking the cross product of <span class="math inline">\(\mathbf{v_1}\)</span> and <span class="math inline">\(\mathbf{v_2}\)</span>:</p>
-<p><span class="math display">\[
-\mathbf{n} = \mathbf{v_1} \times \mathbf{v_2} =
-\begin{vmatrix}
-\hat{i} &amp; \hat{j} &amp; \hat{k} \\
-2 &amp; 2 &amp; 5 \\
-5 &amp; 5 &amp; 8
-\end{vmatrix}
-\]</span></p>
-<p>Calculating the determinant, we have:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(2 \cdot 8 - 5 \cdot 5) - \hat{j}(2 \cdot 8 - 5 \cdot 5) + \hat{k}(2 \cdot 5 - 2 \cdot 5)
-\]</span></p>
-<p>This simplifies to:</p>
-<p><span class="math display">\[
-\mathbf{n} = \hat{i}(-9) + \hat{j}(9) + \hat{k}(0) = (-9, 9, 0)
-\]</span></p>
-<p>The equation of the plane can be expressed as:</p>
-<p><span class="math display">\[
-ax + by + cz = d
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{n} = (a, b, c) = (-9, 9, 0)\)</span>. Using the point <span class="math inline">\(P_1(1, 2, 0)\)</span> to find <span class="math inline">\(d\)</span>:</p>
-<p><span class="math display">\[
--9(1) + 9(2) + 0(0) = d
-\]</span></p>
-<p>This gives:</p>
-<p><span class="math display">\[
--9 + 18 = d \implies d = 9
-\]</span></p>
-<p>Thus, the equation of the plane is:</p>
-<p><span class="math display">\[
--9x + 9y = 9 \quad \text{or} \quad x - y = -1.
-\]</span></p>
-<ol start="2" type="1">
-<li><strong>Find the directional cosines of the line passing through points <span class="math inline">\((1, 1, 1)\)</span> and <span class="math inline">\((4, 5, 6)\)</span>.</strong></li>
-</ol>
-<p><strong>Solution:</strong></p>
-<p>The direction vector of the line is:</p>
-<p><span class="math display">\[
-\mathbf{d} = (4 - 1, 5 - 1, 6 - 1) = (3, 4, 5).
-\]</span></p>
-<p>The magnitude of the direction vector is:</p>
-<p><span class="math display">\[
-|\mathbf{d}| = \sqrt{3^2 + 4^2 + 5^2} = \sqrt{9 + 16 + 25} = \sqrt{50}.
-\]</span></p>
-<p>The directional cosines are:</p>
-<p><span class="math display">\[
-l = \frac{3}{\sqrt{50}}, \quad m = \frac{4}{\sqrt{50}}, \quad n = \frac{5}{\sqrt{50}}.
-\]</span></p>
-<p>Thus, the directional cosines are <span class="math inline">\(l = \frac{3}{\sqrt{50}}\)</span>, <span class="math inline">\(m = \frac{4}{\sqrt{50}}\)</span>, and <span class="math inline">\(n = \frac{5}{\sqrt{50}}\)</span>.</p>
-<hr>
+</section>
+<section id="transposes-and-symmetric-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="transposes-and-symmetric-matrices">Transposes and Symmetric Matrices</h3>
+<p>The <strong>transpose</strong> of a matrix <code>A</code> is denoted as <code>A^T</code>. A matrix is <strong>symmetric</strong> if its transpose equals the original matrix (<span class="math inline">\(S^T = S\)</span>).</p>
+<section id="properties-of-symmetric-matrices" class="level4">
+<h4 class="anchored" data-anchor-id="properties-of-symmetric-matrices">Properties of Symmetric Matrices:</h4>
+<ul>
+<li><strong>Real Eigenvalues</strong>: The eigenvalues of a symmetric matrix are real.</li>
+<li><strong>Orthogonal Eigenvectors</strong>: Eigenvectors corresponding to distinct eigenvalues are orthogonal.</li>
+</ul>
+</section>
+</section>
+<section id="efficiency-considerations-beyond-inverse-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="efficiency-considerations-beyond-inverse-calculation">Efficiency Considerations: Beyond Inverse Calculation</h3>
+<p>While calculating <span class="math inline">\(A^{-1}\)</span> provides a direct solution, it is often inefficient. For large systems, techniques like <strong>LU decomposition</strong> with forward and backward substitution are preferred, offering computational efficiency.</p>
+<p>In summary, Section 2 of “Computational Linear Algebra” presents key methods for solving linear equations, emphasizing both theoretical foundations and practical efficiency.</p>
 
 
 </section>
@@ -892,13 +851,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../2024/weeks/week01/page.html" class="pagination-link" aria-label="Week 01">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01</span>
+      <a href="../../../2024/weeks/week01/Vectors_matrices.html" class="pagination-link" aria-label="👨‍🏫 Basics of Linear Algebra">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">👨‍🏫 Basics of Linear Algebra</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../2024/weeks/week01/Vectors_matrices.html" class="pagination-link" aria-label="👨‍🏫 Basics of Linear Algebra">
-        <span class="nav-page-text">👨‍🏫 Basics of Linear Algebra</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../2024/weeks/week02/matrix_with_soln.html" class="pagination-link" aria-label="👨‍🏫 Creating a matrix A which give a solution, $Ax=b$!">
+        <span class="nav-page-text">👨‍🏫 Creating a matrix A which give a solution, <span class="math inline">\(Ax=b\)</span>!</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

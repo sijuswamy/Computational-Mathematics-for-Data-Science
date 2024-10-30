@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../css/custom_style.css">
 <link rel="stylesheet" href="../../../css/syllabus.css">
@@ -151,8 +180,79 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../2024/weeks/week01/class_work1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2024/weeks/week01/Vectors_matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Basics of Linear Algebra</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week01/solution_of_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Solution of System of Equations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/matrix_with_soln.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Creating a matrix A which give a solution, <span class="math inline">\(Ax=b\)</span>!</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week01/vector-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Essentials of Vector Spaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week01/linear_transformations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Linear Transformations- The Essence of Linearity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../2024/weeks/week02/page2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 02</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/orthogonality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Orthogonality in Vector Space Applications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/eigen_value_vector.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Unleashes Power of the Linear Algebra</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/class_work1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">👨‍🏫 Class Work Resource</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/svd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Singular Value Decomposition (SVD)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/five_decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Five Fundamental Decompositions in Linear Algebra</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../2024/weeks/week02/learning_from_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">👨‍🏫 Unpacking the World of Learning from Data</span></a>
   </div>
 </li>
       </ul>

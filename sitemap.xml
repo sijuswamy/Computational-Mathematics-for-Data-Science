@@ -1,24 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/slides.html</loc>
-    <lastmod>2024-10-07T18:46:34.146Z</lastmod>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/vector-space.html</loc>
+    <lastmod>2024-10-24T04:42:17.326Z</lastmod>
   </url>
   <url>
-    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/class_work1.html</loc>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week02/page2.html</loc>
+    <lastmod>2024-10-23T14:32:10.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week02/matrix_with_soln.html</loc>
+    <lastmod>2024-10-30T16:22:11.528Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week02/five_decomposition.html</loc>
+    <lastmod>2024-10-24T05:33:14.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week02/class_work1.html</loc>
     <lastmod>2024-10-08T05:13:03.181Z</lastmod>
   </url>
   <url>
-    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/index.html</loc>
-    <lastmod>2024-10-08T05:33:19.770Z</lastmod>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/slides.html</loc>
+    <lastmod>2024-10-23T20:26:30.326Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/linear_transformations.html</loc>
+    <lastmod>2024-10-24T04:44:14.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/Vectors_matrices.html</loc>
+    <lastmod>2024-10-23T03:48:11.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/index.html</loc>
+    <lastmod>2024-10-24T11:02:38.442Z</lastmod>
   </url>
   <url>
     <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/syllabus.html</loc>
     <lastmod>2024-10-07T18:46:34.146Z</lastmod>
   </url>
   <url>
-    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/index.html</loc>
-    <lastmod>2024-10-08T05:28:19.474Z</lastmod>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week02/determinants.html</loc>
+    <lastmod>2024-10-23T07:14:05.554Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/index.html</loc>
+    <lastmod>2024-10-24T05:36:40.837Z</lastmod>
   </url>
   <url>
     <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/algebra_geometry.html</loc>
@@ -27,5 +55,25 @@
   <url>
     <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/page.html</loc>
     <lastmod>2024-10-07T18:46:34.146Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week01/solution_of_system.html</loc>
+    <lastmod>2024-10-24T05:12:25.620Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week02/eigen_value_vector.html</loc>
+    <lastmod>2024-10-23T20:44:37.407Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week02/learning_from_data.html</loc>
+    <lastmod>2024-10-24T05:06:18.577Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week02/orthogonality.html</loc>
+    <lastmod>2024-10-23T14:44:42.753Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijuswamy.github.io/Computational-Mathematics-for-Data-Science/2024/weeks/week02/svd.html</loc>
+    <lastmod>2024-10-23T20:04:46.161Z</lastmod>
   </url>
 </urlset>
