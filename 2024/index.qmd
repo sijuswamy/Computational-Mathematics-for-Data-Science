@@ -12,6 +12,7 @@ format: html
 
 - [🗓️ Class Work-1](/2024/weeks/week01/class_work1.qmd) is now available!
 
+- [🗓️ Class Work-2](/2024/weeks/week02/eigen_value_vector.qmd) is now available!
 
 :::
 
@@ -34,17 +35,19 @@ Office Hours:
 - Where: ASAI
 - How to book:
 
-## Teaching Staff
+## Supporting Team
+
+![](/figures/people/vipin.jpg){fig-align="left" fig-alt="Photo of TA_NAME" style="object-fit: cover;width:5em;height:5em;border-radius: 50%;"}  
+**[Dr. Vipin V](#)** <br/>
+Assistant Professor, CEN <br> 
+📧 [EMAIL](mailto:)
 
 ![](/figures/people/Swamy.jpg){fig-align="left" fig-alt="Photo of TA_NAME" style="object-fit: cover;width:5em;height:5em;border-radius: 50%;"}  
 **[Mr. Siju K S](#)** <br/>
 Research Scholar at CEN <br> 
 📧 [EMAIL](mailto:)
 
-![](/figures/people/vipin.jpg){fig-align="left" fig-alt="Photo of TA_NAME" style="object-fit: cover;width:5em;height:5em;border-radius: 50%;"}  
-**[Dr. Vipin V](#)** <br/>
-Assistant Professor, CEN <br> 
-📧 [EMAIL](mailto:)
+
 
 
 :::

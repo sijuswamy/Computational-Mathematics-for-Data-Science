@@ -6,7 +6,7 @@ project:
     - "index.qmd"
     - "2024/*.qmd"
     - "2024/weeks/week01/*.qmd"
-
+    - "2024/weeks/week02/*.qmd"
 website:
   title: "Computational Mathematics for Data Science"
   page-navigation: true
@@ -43,9 +43,33 @@ website:
            text: Week 01
            contents:
              - href: 2024/weeks/week01/algebra_geometry.qmd
-               text: 👨‍🏫 Week-1 Summary          
-             - href: 2024/weeks/week01/class_work1.qmd
+               text: 👨‍🏫 Week-1 Summary
+             - href: 2024/weeks/week01/Vectors_matrices.qmd
+               text: 👨‍🏫 Basics of Linear Algebra
+             - href: 2024/weeks/week01/solution_of_system.qmd
+               text: 👨‍🏫 Solution of System of Equations
+             - href: 2024/weeks/week02/matrix_with_soln.qmd
+               text: 👨‍🏫 Creating a matrix A which give a solution, $Ax=b$! 
+             - href: 2024/weeks/week01/vector-space.qmd
+               text: 👨‍🏫 Essentials of Vector Spaces
+             - href: 2024/weeks/week01/linear_transformations.qmd
+               text: 👨‍🏫 Linear Transformations- The Essence of Linearity
+         - href: 2024/weeks/week02/page2.qmd
+           text: Week 02
+           contents:
+             - href: 2024/weeks/week02/orthogonality.qmd
+               text: 👨‍🏫 Orthogonality in Vector Space Applications
+             - href: 2024/weeks/week02/eigen_value_vector.qmd
+               text: 👨‍🏫 Unleashes Power of the Linear Algebra
+             - href: 2024/weeks/week02/class_work1.qmd
                text: 👨‍🏫 Class Work Resource
+             - href: 2024/weeks/week02/svd.qmd
+               text: 👨‍🏫 Singular Value Decomposition (SVD)
+             - href: 2024/weeks/week02/five_decomposition.qmd
+               text: 👨‍🏫 Five Fundamental Decompositions in Linear Algebra
+             - href: 2024/weeks/week02/learning_from_data.qmd
+               text: 👨‍🏫 Unpacking the World of Learning from Data               
+
             #  - href: 2024/weeks/week01/lab.qmd
             #    text: 💻 Lab Roadmap
             #  - href: 2024/weeks/week01/appendix.qmd
