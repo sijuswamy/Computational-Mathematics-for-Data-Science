@@ -184,7 +184,7 @@ where $\gamma$ are chosen such that the system is inconsistent.
 
 
 :::{.panel-tabset}
-## Syntax
+## Matlab
 
 ```{.matlab}
 % Set a random seed for reproducibility (optional)
